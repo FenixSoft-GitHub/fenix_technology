@@ -7,18 +7,18 @@ const NewsLetter = () => {
           />
     
           {/* CONTENIDO DE NEWSLETTER */}
-          <div className="container z-10 relative p-5 md:p-0">
-            <div className="w-full text-black bg-white p-12 space-y-5 md:w-[50%] lg:w-[40%]">
+          <div className="container mx-auto z-10 relative">
+            <div className="w-full text-black bg-white p-8 space-y-5 md:w-[50%] lg:w-[40%] rounded-md">
               <p className="text-xs uppercase font-semibold">
                 Suscríbete a nuestro boletín y recibe promociones exclusivas
               </p>
-              <p className="text-xs font-medium w-[80%] leading-5">
+              <p className="text-xs font-medium w-[80%] leading-4">
                 Introduce tu correo para recibir ofertas
               </p>
               <form className="flex flex-col gap-5 xl:flex-row">
                 <input
                   type="email"
-                  className="border border-slate-200 focus:outline-none rounded-full py-3 px-5 w-full text-xs font-medium"
+                  className="border border-slate-300 focus:outline-none rounded-md py-2 px-4 w-full text-xs font-medium"
                   placeholder="Correo Electrónico"
                 />
     

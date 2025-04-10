@@ -24,7 +24,7 @@ export const ContainerFilter = ({selectedBrands, setSelectedBrands}: Props) => {
      }
   }
   return (
-    <div className="p-5 border border-slate-200 rounded-lg h-fit col-span-2 lg:col-span-1">
+    <div className="bg-slate-100 p-5 border border-slate-300 rounded-lg shadow-md h-fit col-span-2 lg:col-span-1">
       <h3 className="font-semibold text-xl mb-4">Filtros</h3>
 
       {/* Separador  */}

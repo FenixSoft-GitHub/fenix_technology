@@ -6,6 +6,7 @@ import NewsLetter from "@/components/home/NewsLetter";
 import { Sheet } from "@/components/shared/Sheet";
 import { useGlobalStore } from "@/store/global.store";
 import { NavbarMobile } from "@/components/shared/NavBarMobile";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
 export const RootLayout = () => {
   const { pathname } = useLocation();
@@ -18,7 +19,7 @@ export const RootLayout = () => {
 
       {pathname === "/" && <Banner />}
 
-      <main className="container my-8 flex-1">
+      <main className="my-8 flex-1">
         <Outlet />
       </main>
 
@@ -29,6 +30,8 @@ export const RootLayout = () => {
       {activeNavMobile && <NavbarMobile />}
 
       <Footer />
+
+      <WhatsAppButton />
     </div>
   )
 }

@@ -19,7 +19,7 @@ const OrderUserPage = () => {
 		<div>
 			<div className='flex flex-col justify-between items-center gap-5 md:flex-row md:gap-0'>
 				<button
-					className='border rounded-full py-2 border-slate-300 px-5 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-widest hover:bg-stone-100 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-slate-300'
+					className='border rounded-full py-2 border-slate-300 px-5 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-widest hover:text-cyan-600 hover:bg-gray-100 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-slate-300'
 					onClick={() => navigate(-1)}
 				>
 					<IoChevronBack size={16} />

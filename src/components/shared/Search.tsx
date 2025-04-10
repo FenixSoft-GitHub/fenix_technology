@@ -40,8 +40,8 @@ export const Search = () => {
                         onChange={e => setSearchTerm(e.target.value)}
                     />
                 </form>
-                <button 
-                    className='bg-gray-200/70 hover:bg-gray-300 rounded-full shadow-lg cursor-pointer' 
+                <button
+                    className='bg-gray-200/70 hover:bg-gray-300 rounded-full shadow-lg cursor-pointer'
                     onClick={closeSheet}
                 >
                     <IoMdClose size={25} className='text-black p-1' />
@@ -87,9 +87,9 @@ export const Search = () => {
                     </ul>
                 ) : (
                     <div className='flex flex-col items-center justify-center gap-7'>
-                        <img 
-                            src="/img/NoResult.avif" alt="No se encontraron resultados" 
-                            className='w-1/2 border border-gray-300 shadow-lg rounded-full p-2' 
+                        <img
+                            src="/img/NoResult.avif" alt="No se encontraron resultados"
+                            className='w-1/2 border border-gray-300 shadow-lg rounded-full p-2'
                         />
                         <p className='text-sm text-gray-600 text-center'>
                             No se encontraron resultados

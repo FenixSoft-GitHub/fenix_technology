@@ -8,18 +8,44 @@ body {
   /* Ajusta este valor según la altura de tu NavBar */
   font-family: var(--font-display);
   background-color: #F8F9FA;
+
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #696b6b;
+  --sb-size: 7px;
 }
 
-.container {
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 16px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 16px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+
+/* .container {
   width: 100%;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-}
+} */
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -31,7 +57,7 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
-}
+} */
 
 @theme {
   --font-display: "Montserrat", "sans-serif";
@@ -79,6 +105,7 @@ body {
       opacity: 0;
       transform: scale(0.95);
     }
+
     100% {
       opacity: 1;
       transform: scale(1);
@@ -111,4 +138,105 @@ body {
 
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  --entry-animation: -20px;
+  --cover-animation: 20px;
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --entry-animation: -100px;
+    --cover-animation: 100px;
+  }
+}
+
+.number {
+  text-shadow: 0 0 15px rgba(197, 225, 255, 0.9);
+}
+
+#theater,
+#trophies-text h1,
+#trophies-text p {
+  animation: cover-animation linear both;
+  animation-timeline: view();
+}
+
+#theater-text h1,
+#theater-text p,
+#trophies {
+  animation: entry-animation linear both;
+  animation-timeline: view();
+}
+
+#theater {
+  animation-range: entry 10% cover 40%;
+}
+
+#theater-text h1 {
+  animation-range: entry 10% cover 30%;
+}
+
+#theater-text p {
+  animation-range: entry 10% cover 20%;
+}
+
+#trophies {
+  animation-range: entry 30% cover 50%;
+}
+
+#trophies-text h1 {
+  animation-range: entry 30% cover 40%;
+}
+
+#trophies-text p {
+  animation-range: entry 20% cover 30%;
+}
+
+@keyframes entry-animation {
+  0% {
+    opacity: 0;
+    translate: var(--entry-animation) 0;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes cover-animation {
+  0% {
+    opacity: 0;
+    translate: var(--cover-animation) 0;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* CLASES PERSONALIZADAS */
+.btn-paginated {
+	@apply border border-slate-700 rounded-md font-semibold text-xs py-1 px-3 hover:bg-slate-700 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-800 disabled:text-slate-800 disabled:hover:bg-white disabled:hover:text-slate-700;
+}
+
+.btn-primary {
+	@apply bg-black text-white py-2 px-3 text-sm font-medium rounded-md;
+}
+
+.btn-secondary-outline {
+	@apply border border-slate-400 text-slate-600 py-2 px-3 text-sm font-medium rounded-md;
+}
+
+/* Para Chrome, Safari, Edge y Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Para firefox */
+input[type=number]{
+	-moz-appearance: textfield;
 }

@@ -21,7 +21,7 @@ const ProductDescription = ({content}: Props) => {
 
 
   return (
-    <div className="mt-12">
+    <div className="px-8 mt-12">
         <h2 className="text-2xl font-semibold text-center mb-8 underline">
             Descripción
         </h2>

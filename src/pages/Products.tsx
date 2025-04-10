@@ -24,11 +24,11 @@ const Products = () => {
   const preparedProducts = prepareProducts(products)
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-6 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]">
-        Fenix Technology
+    <main className="container mx-auto p-4 mt-[52px]">
+      <h1 className="text-4xl text-center font-bold text-gray-900 mb-6 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]">
+        Artículos
       </h1>
-      <section className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-between ">
+      <section className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-between ">
         {/* FILTROS */}
         <ContainerFilter
           selectedBrands={selectedBrans}
@@ -43,7 +43,7 @@ const Products = () => {
           </div> 
         ) : (
           <div className="col-span-2 lg:col-span-2 xl:col-span-4 flex flex-col gap-12">
-            <div className="grid grid-cols-2 gap-3 gap-y-10 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 gap-y-6 xl:grid-cols-4">
               {preparedProducts.map((product) => (
                 <CardProduct
                   key={product.id}

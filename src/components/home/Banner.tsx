@@ -21,14 +21,12 @@ const Banner = () => {
                     Descubre las ofertas exclusivas y las últimas novedades en tecnología
                 </p>
                 <Link 
-                    to="/fenix-technology" 
+                    to="/products" 
                     className="bg-cyan-300 hover:bg-transparent hover:text-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-cyan-300"
                 >
                     Ver Productos
                 </Link>
             </div>
-            {/* </div>
-            </div> */}
         </div>
     )
 }

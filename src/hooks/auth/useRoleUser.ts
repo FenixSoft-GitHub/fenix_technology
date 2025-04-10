@@ -1,0 +1,17 @@
+import { useQuery } from '@tanstack/react-query';
+import { getUserRole } from '@/components/actions';
+
+export const useRoleUser = (userId: string) => {
+	const { data, isLoading } = useQuery({
+		queryKey: ['role-user'],
+		queryFn: async() => getUserRole(userId),
+		enabled: !!userId,
+		// retry: false,
+		// refetchOnWindowFocus: true,
+	});
+
+	return {
+		data,
+		isLoading,
+	};
+};

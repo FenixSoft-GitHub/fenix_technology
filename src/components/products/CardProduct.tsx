@@ -62,7 +62,7 @@ export const CardProduct = ({
   const stock = selectedVariant?.stock || 0;
 
   return (
-    <div className="group relative flex flex-col gap-3 rounded-2xl bg-white p-4 shadow-sm transition-all duration-300 hover:shadow-md">
+    <div className="group relative flex flex-col gap-3 rounded-lg bg-slate-100 border border-slate-300 p-4 shadow-sm transition-all duration-300 hover:shadow-md">
       <Link
         to={`/products/${slug}`}
         className="relative flex overflow-hidden aspect-square"
@@ -70,7 +70,7 @@ export const CardProduct = ({
         <img 
           src={img} 
           alt={name} 
-          className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+          className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105 rounded-lg"
         />
 
         {/* {stock === 0 && (

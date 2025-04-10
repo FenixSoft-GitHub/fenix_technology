@@ -126,7 +126,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800">
           <div className="py-6 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-slate-400">
-              {new Date().getFullYear()} Celulares Baratos. Todos los derechos reservados.
+              {new Date().getFullYear()} Fenix Technology. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/contacto" className="text-sm text-slate-400 hover:text-white transition-colors">

@@ -1,5 +1,5 @@
 import { BiWorld } from "react-icons/bi";
-import { FaHammer } from "react-icons/fa6";
+import { FaBoxOpen, FaCartShopping, FaHammer } from "react-icons/fa6";
 import { HiMiniReceiptRefund } from "react-icons/hi2";
 import { MdLocalShipping } from "react-icons/md";
 
@@ -25,6 +25,16 @@ export const navbarLinks = [
     id: 3,
     title: "Sobre Nosotros",
     href: "/about",
+  },
+  {
+    id: 4,
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    id: 5,
+    title: "Contáctanos",
+    href: "/contact",
   },
 ];
 
@@ -76,4 +86,20 @@ export const features = [
     title: "Garantía",
     description: "Garantía de 1 año en todos los equipos"
   }
+];
+
+
+export const dashboardLinks = [
+	{
+		id: 1,
+		title: 'Productos',
+		href: '/dashboard/products',
+		icon: <FaBoxOpen size={25} />,
+	},
+	{
+		id: 2,
+		title: 'Ordenes',
+		href: '/dashboard/ordenes',
+		icon: <FaCartShopping size={25} />,
+	},
 ];

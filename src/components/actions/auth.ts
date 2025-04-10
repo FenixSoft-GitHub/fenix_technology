@@ -135,3 +135,18 @@ export const getUserProfile = async (userId: string) => {
 	  return null;
 	}
   };
+
+  export const getUserRole = async (userId: string) => {
+	const { data, error } = await supabase
+		.from('user_roles')
+		.select('role')
+		.eq('user_id', userId)
+		.single();
+
+	if (error) {
+		console.log(error);
+		throw new Error('Error al obtener los datos del usuario');
+	}
+
+	return data.role;
+};

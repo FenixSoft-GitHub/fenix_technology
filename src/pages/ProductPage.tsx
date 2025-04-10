@@ -141,10 +141,10 @@ const ProductPage = () => {
 
   return (
     <>
-      <div className="h-fit flex flex-col md:flex-row gap-16 mt-[52px]">
+      <div className="h-fit flex flex-col md:flex-row gap-16 mt-[52px] px-8">
         <GridImages images={product?.images} />
 
-        <div className="flex-1 space-y-5">
+        <div className="flex-1 space-y-2">
           <h1 className="text-3xl font-bold tracking-tight">
             {product?.name}
           </h1>
@@ -236,7 +236,7 @@ const ProductPage = () => {
               <>
               {/* Estaba aqui */}
 
-                <div className="flex flex-col gap-3 mt-8">
+                <div className="flex flex-col gap-2">
                   <button onClick={addToCart} className="bg-cyan-600 uppercase text-white font-semibold py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-cyan-600 hover:bg-cyan-700">
                     Añadir al carrito
                   </button>
