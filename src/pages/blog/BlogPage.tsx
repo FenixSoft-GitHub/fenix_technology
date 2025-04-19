@@ -5,7 +5,7 @@ import { ParsedBlogPost } from '@/components/actions/markdownParser';
 import { GrPowerReset } from 'react-icons/gr';
 
 export const BlogPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, ] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [posts, setPosts] = useState<ParsedBlogPost[]>([]);
 

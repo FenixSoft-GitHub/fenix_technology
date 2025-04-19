@@ -10,7 +10,7 @@ import { supabase } from '@/supabase/client';
 const CheckoutPage = () => {
   const navigate = useNavigate(); // ✅ Mover arriba
   const totalItems = useCartStore(state => state.totalItemsInCart);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [, setIsScrolled] = useState(false);
 
   const { isLoading } = useUser();
 

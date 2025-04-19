@@ -6,10 +6,6 @@ import {
     useWatch,
 } from 'react-hook-form';
 import { ProductFormValues } from '@/lib/validators';
-import {
-    IoIosAddCircleOutline,
-    IoIosCloseCircleOutline,
-} from 'react-icons/io';
 import { useEffect, useState } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 import { BiAddToQueue } from 'react-icons/bi';
@@ -130,8 +126,8 @@ export const VariantsInput = ({
                                 {...register(`variants.${index}.storage`)}
                                 className='border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
                             />
-                            
-                            <div className='flex relative'>
+
+                            {/* <div className='flex relative'>
                                 {colorActive[index] && (
                                     <div className='absolute border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-gray-800 dark:text-gray-100 rounded-md bottom-8 left-[40px] p-1 w-[100px] h-fit space-y-2'>
                                         <input
@@ -149,28 +145,46 @@ export const VariantsInput = ({
                                     </div>
                                 )}
                                 <button
-									className='border dark:border-gray-600 w-full h-8 cursor-pointer rounded text-xs font-medium flex items-center justify-center'
-									type='button'
-									onClick={() => toggleColorActive(index)}
-								>
-									{fields[index]?.color && fields[index]?.colorName ? (
-										<span
-											className={`inline-block w-4 h-4 rounded-full bg-block`}
-											style={{
-												backgroundColor: fields[index]?.color,
-											}}
-										/>
-									) : (
-										'Añadir'
-									)}
-								</button>
+                                    className='border dark:border-gray-600 w-full h-8 cursor-pointer rounded text-xs font-medium flex items-center justify-center'
+                                    type='button'
+                                    onClick={() => toggleColorActive(index)}
+                                >
+                                    {fields[index]?.color && fields[index]?.colorName ? (
+                                        <span
+                                            className={`inline-block w-4 h-4 rounded-full bg-block`}
+                                            style={{
+                                                backgroundColor: fields[index]?.color,
+                                            }}
+                                        />
+                                    ) : (
+                                        'Añadir'
+                                    )}
+                                </button>
+                            </div> */}
 
-                                {/* <button
+                            <div className='flex relative'>
+                                {colorActive[index] && (
+                                    <div className='absolute bg-stone-100 dark:bg-gray-800 dark:text-gray-100 rounded-md bottom-8 left-[40px] p-1 w-[100px] h-fit space-y-2'>
+                                        <input
+                                            type='color'
+                                            {...register(`variants.${index}.color`)}
+                                            className='rounded-md px-3 py-1.5 w-full dark:bg-gray-700 dark:text-gray-100'
+                                        />
+
+                                        <input
+                                            type='text'
+                                            placeholder='Azul Marino'
+                                            {...register(`variants.${index}.colorName`)}
+                                            className='rounded-md px-3 py-1.5 w-full text-xs dark:bg-gray-700 dark:text-gray-100 focus:outline-none font-semibold placeholder:font-normal'
+                                        />
+                                    </div>
+                                )}
+                                <button
                                     className='border w-full h-8 cursor-pointer rounded text-xs font-medium flex items-center justify-center'
                                     type='button'
                                     onClick={() => toggleColorActive(index)}
                                 >
-                                    {colorActive[index] && colorValues[index] ? (
+                                    {colorValues[index] && colorNameValues[index] ? (
                                         <span
                                             className={`inline-block w-4 h-4 rounded-full bg-block`}
                                             style={{
@@ -178,18 +192,9 @@ export const VariantsInput = ({
                                             }}
                                         />
                                     ) : (
-                                        fields[index]?.color && fields[index]?.colorName ? (
-                                            <span
-                                                className={`inline-block w-4 h-4 rounded-full bg-block`}
-                                                style={{
-                                                    backgroundColor: fields[index]?.color,
-                                                }}
-                                            />
-                                        ) : (
-                                            'Añadir'
-                                        )
+                                        'Añadir'
                                     )}
-                                </button> */}
+                                </button>
                             </div>
 
                             <div className='flex justify-end'>
