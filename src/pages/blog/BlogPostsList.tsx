@@ -1,4 +1,5 @@
-import { BlogPostCard } from '@/components/blog/BlogPostCard';
+import BlogPostCard from "@/components/blog/BlogPostCard";
+
 
 interface ParsedBlogPost {
   metadata: {

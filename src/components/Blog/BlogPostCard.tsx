@@ -11,7 +11,7 @@ interface BlogPost {
   excerpt?: string;
 }
 
-export const BlogPostCard = ({ post }: { post: BlogPost }) => {
+const BlogPostCard = ({ post }: { post: BlogPost }) => {
 	return (
 		<div className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mt-8 hover:shadow-lg transition-shadow flex flex-col gap-4"
 			key={post.slug}
@@ -68,3 +68,5 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
     </div>
   );
 };
+
+export default BlogPostCard;
