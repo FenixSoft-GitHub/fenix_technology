@@ -9,6 +9,7 @@ import { ItemsCheckout } from './ItemsCheckout';
 import { useCreateOrder } from '@/hooks';
 import { useCartStore } from '@/store/cart.store';
 import { ImSpinner2 } from 'react-icons/im';
+import { Separator } from '../shared/Separator';
 
 export const FormCheckout = () => {
 	const {
@@ -56,7 +57,7 @@ export const FormCheckout = () => {
 	}
 
 	return (
-		<div>
+		<div className='dark:bg-gray-900 dark:text-gray-100'>
 			<form className='flex flex-col gap-6' onSubmit={onSubmit}>
 				<div className='flex flex-col gap-3'>
 					<h3 className='text-lg font-semibold tracking-normal'>
@@ -68,6 +69,7 @@ export const FormCheckout = () => {
 						errors={errors}
 						name='addressLine1'
 						placeholder='Dirección principal'
+						className='dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600'
 					/>
 
 					<InputAddress
@@ -75,6 +77,7 @@ export const FormCheckout = () => {
 						errors={errors}
 						name='addressLine2'
 						placeholder='Dirección adicional (Opcional)'
+						className='dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600'
 					/>
 
 					<InputAddress
@@ -82,6 +85,7 @@ export const FormCheckout = () => {
 						errors={errors}
 						name='state'
 						placeholder='Estado / Provincia'
+						className='dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600'
 					/>
 
 					<InputAddress
@@ -89,6 +93,7 @@ export const FormCheckout = () => {
 						errors={errors}
 						name='city'
 						placeholder='Ciudad'
+						className='dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600'
 					/>
 
 					<InputAddress
@@ -96,10 +101,11 @@ export const FormCheckout = () => {
 						errors={errors}
 						name='postalCode'
 						placeholder='Código Postal (Opcional)'
+						className='dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600'
 					/>
 
 					<select
-						className='border border-slate-200 rounded-md p-3'
+						className='border border-slate-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-md p-3'
 						{...register('country')}
 					>
 						<option value='Venezuela'>Venezuela</option>
@@ -109,18 +115,18 @@ export const FormCheckout = () => {
 				<div className='flex flex-col gap-3'>
 					<p className='text-sm font-medium'>Métodos de envío</p>
 
-					<div className='flex justify-between items-center text-sm border border-slate-600 bg-stone-100 py-4 rounded-md px-6'>
+					<div className='flex justify-between items-center text-sm border border-gray-600 dark:bg-gray-800 dark:text-gray-100 p-4 rounded-md'>
 						<span className='font-normal'>Standard</span>
 						<span className='font-semibold'>Gratis</span>
 					</div>
 				</div>
 
 				<div className='flex flex-col'>
-					<div className='flex justify-between items-center text-sm border border-slate-600 bg-stone-100 py-4 rounded-ss-md rounded-se-md px-6'>
+					<div className='flex justify-between items-center text-sm border border-gray-600 dark:bg-gray-800 p-4 rounded-ss-md rounded-se-md'>
 						<span>Depósito Bancario</span>
 					</div>
 
-					<div className='bg-stone-100 text-[13px] p-5 space-y-0.5 border border-gray-200 rounded-es-md rounded-ee-md'>
+					<div className='text-[13px] p-5 space-y-0.5 border-t-0 border border-gray-600 dark:bg-gray-800 rounded-es-md rounded-ee-md'>
 						<p>Compra a traves de transferencia bancaria</p>
 						<p>BANCO VENEZUELA</p>
 						<p>Razón Social: Fenix Technology</p>
@@ -134,17 +140,18 @@ export const FormCheckout = () => {
 					</div>
 				</div>
 
-				<div className='flex flex-col gap-6'>
-					<h3 className='font-semibold text-3xl'>
+				<div className='flex flex-col gap-4'>
+					<h3 className='font-semibold text-2xl'>
 						Resumen del pedido
 					</h3>
+					<Separator />
 
 					<ItemsCheckout />
 				</div>
 
 				<button
 					type='submit'
-					className='bg-black text-white py-3.5 font-bold tracking-wide rounded-full mt-2 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-gray-600'
+					className='bg-black text-gray-100 dark:bg-gray-800 dark:text-gray-100 py-3.5 font-bold tracking-wide rounded-full mt-2 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-gray-600'
 				>
 					Finalizar Pedido
 				</button>

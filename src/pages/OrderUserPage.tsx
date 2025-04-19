@@ -16,33 +16,39 @@ const OrderUserPage = () => {
 	if (isLoading || !order) return <Loader />;
 
 	return (
-		<div>
-			<div className='flex flex-col justify-between items-center gap-5 md:flex-row md:gap-0'>
+		<div className='dark:bg-gray-900 dark:text-gray-100'>
+			<div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
+				{/* Botón Volver */}
 				<button
-					className='border rounded-full py-2 border-slate-300 px-5 flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-widest hover:text-cyan-600 hover:bg-gray-100 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-slate-300'
+					className="flex items-center gap-2 text-sm border border-slate-200 dark:border-gray-500 rounded-full bg-slate-100 dark:bg-slate-800 shadow-gray-400 shadow-md hover:bg-slate-200 dark:hover:bg-slate-600 px-6 py-1.5"
 					onClick={() => navigate(-1)}
 				>
 					<IoChevronBack size={16} />
-					Volver a los pedidos
+					Volver
 				</button>
-				<div className='flex flex-col items-center gap-1.5'>
-					<h1 className='text-3xl font-bold'>Pedido # {id}</h1>
-					<p className='text-sm'>
+
+				{/* Título centrado */}
+				<div className="flex flex-col items-center gap-1.5 text-center">
+					<h1 className="text-3xl font-bold">Pedido # {id}</h1>
+					<p className="text-sm">
 						{formatDateLong(order.created_at)}
 					</p>
 				</div>
-				<div></div>
-				<div></div>
+
+				{/* Div vacío para alinear visualmente el centro */}
+				<div className="w-[112px] hidden md:block" /> {/* Aproximadamente el ancho del botón */}
 			</div>
+
+
 
 			<div className='flex flex-col mt-10 mb-5 gap-5'>
 				<table className='text-sm w-full caption-bottom overflow-auto'>
-					<thead className='border-b border-gray-200'>
+					<thead className='border-b border-gray-200 dark:border-gray-600 '>
 						<tr>
 							{tableHeaders.map((header, index) => (
 								<th
 									key={index}
-									className='h-12 text-center uppercase tracking-wide text-stone-600 font-semibold'
+									className='h-12 text-center uppercase tracking-wide text-stone-600 dark:text-gray-100 font-semibold'
 								>
 									{header}
 								</th>
@@ -52,7 +58,7 @@ const OrderUserPage = () => {
 
 					<tbody>
 						{order.orderItems.map((product, index) => (
-							<tr key={index} className='border-b border-gray-200'>
+							<tr key={index} className='border-b border-gray-200 dark:border-gray-600 '>
 								<td className='p-4 font-medium tracking-tighter flex gap-3 items-center'>
 									<img
 										src={product.productImage}
@@ -64,9 +70,6 @@ const OrderUserPage = () => {
 										<p className='text-xs'>
 											{product.color_name} / {product.storage}
 										</p>
-										{/* <p className='text-sm'>
-											{formatPrice(product.price)}
-										</p> */}
 									</div>
 								</td>
 								<td className='p-4 font-medium tracking-tighter text-center'>
@@ -83,7 +86,7 @@ const OrderUserPage = () => {
 					</tbody>
 				</table>
 
-				<div className='flex flex-col gap-1.5 text-slate-600 text-sm self-end w-1/3'>
+				<div className='flex flex-col gap-1.5 text-slate-600 dark:text-gray-100 text-sm self-end w-1/3'>
 					<div className='flex justify-between'>
 						<p>Subtotal</p>
 						<p>{formatPrice(order.totalAmount)}</p>
@@ -92,7 +95,7 @@ const OrderUserPage = () => {
 						<p>Envío (Standard)</p>
 						<p>{formatPrice(0)}</p>
 					</div>
-					<div className='flex justify-between text-black font-semibold'>
+					<div className='flex justify-between text-black dark:text-gray-100 font-semibold'>
 						<p>Total</p>
 						<p>{formatPrice(order.totalAmount)}</p>
 					</div>
@@ -101,8 +104,8 @@ const OrderUserPage = () => {
 				<div className='flex flex-col gap-3'>
 					<h2 className='text-lg font-bold'>Dirección</h2>
 
-					<div className='border border-stone-300 p-5 flex flex-col gap-5'>
-						<div className='space-y-1'>
+					<div className='border border-stone-300 dark:border-gray-600 p-5 flex flex-col gap-5 rounded-md'>
+						<div className='space-y-1 dark:bg-gray-600 bg-gray-200 p-3 rounded-md'>
 							<h3 className='font-medium'>Cliente:</h3>
 							<p>{order.customer.full_name}</p>
 						</div>

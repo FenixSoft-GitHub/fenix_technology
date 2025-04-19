@@ -10,7 +10,7 @@ export const NavbarMobile = () => {
     );
 
     return (
-        <div className='bg-gray-300/50 backdrop-blur-md text-black h-screen w-full shadow-lg animate-slide-in-left fixed z-50 flex justify-center py-32'>
+        <div className='bg-gray-300/50 backdrop-blur-md text-gray-900 dark:text-gray-100 h-screen w-full shadow-lg animate-slide-in-left fixed z-50 flex justify-center py-32'>
             <button
                 className='absolute top-5 right-5'
                 onClick={() => setActiveNavMobile(false)}

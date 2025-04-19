@@ -9,10 +9,12 @@ const OrdersUserPage = () => {
     if (isLoading || !orders) return <Loader />;
 
 	return (
-		<div className='flex flex-col gap-6 items-center'>
+		<div className='flex flex-col gap-6 items-center py-6 dark:bg-gray-900 dark:text-gray-100'>
 			<div className='flex gap-2'>
-				<h1 className='text-3xl font-bold'>Pedidos</h1>
-				<span className='w-5 h-5 rounded-full bg-black text-white text-[11px] flex justify-center items-center mt-1'>
+				<h1 className='text-3xl font-bold text-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]'>
+					Pedidos
+				</h1>
+				<span className='w-5 h-5 rounded-full bg-black text-white dark:bg-gray-600 dark:text-gray-100 text-[11px] flex justify-center items-center mt-1 drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]'>
 					{orders.length}
 				</span>
 			</div>

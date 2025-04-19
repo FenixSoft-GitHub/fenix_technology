@@ -2,9 +2,54 @@ import { supabase } from "@/supabase/client";
 import { ProductInput } from "@/components/interfaces";
 import { extractFilePath } from "@/helpers";
 
+//Desde aqui la prueba
+export const getProductsAll = async () => {
+  try { 
+    const { data: products, error, count } = await supabase
+      .from("products")
+      .select("*, variants(*)", { count: "exact" })
+      .order("created_at", { ascending: false })
+
+    if (error) {
+      console.log(error.message);
+      throw new Error(`Error fetching products: ${error.message}`);
+    }
+
+    return {products, count};
+    
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+};
+
+export const getProductsBrands = async () => {
+  try {
+    const { data, error } = await supabase
+      .from("products")
+      .select("brand");
+
+    if (error) {
+      console.log(error.message);
+      throw new Error(`Error fetching product brands: ${error.message}`);
+    }
+
+ // data ahora será un array de objetos como { brand: 'Nike' }, { brand: 'Adidas' }, etc.
+    // Vamos a extraer todos los valores de 'brand' y luego obtener los únicos usando Set.
+    const allBrands = data.map((item) => item.brand).filter(Boolean);
+    const uniqueBrands = [...new Set(allBrands)]; // Usamos Set para obtener valores únicos y luego lo convertimos a un array
+
+    return uniqueBrands;
+		
+  } catch (error) {
+    console.error("Error fetching product brands:", error);
+    throw error;
+  }
+};
+
+//Versión Original
 export const getProducts = async (page: number) => {
   try { 
-
     const itemsPerPage = 8;
     const from = (page - 1) * itemsPerPage;
     const to = from + itemsPerPage - 1;

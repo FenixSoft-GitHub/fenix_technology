@@ -78,13 +78,13 @@ export const UploaderImages = ({
 				accept='image/*'
 				multiple
 				onChange={handleImageChange}
-				className='block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200'
+				className='block w-full text-sm text-slate-500 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-700 dark:file:bg-gray-700 dark:file:text-gray-100 hover:file:bg-slate-200 dark:hover:file:bg-gray-600'
 			/>
 
-			<div className='grid grid-cols-4 lg:grid-cols-2 gap-4'>
+			<div className='grid grid-cols-4 lg:grid-cols-2 gap-4 dark:bg-gray-800 dark:text-gray-100'>
 				{images.map((image, index) => (
 					<div key={index}>
-						<div className='border border-gray-200 w-full h-20 rounded-md p-1 relative lg:h-28'>
+						<div className='border border-gray-200 w-full h-20 rounded-md p-1 relative lg:h-28 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100'>
 							<img
 								src={image.previewUrl}
 								alt={`Preview ${index}`}

@@ -1,6 +1,7 @@
 import { Control, FieldErrors, useFieldArray } from 'react-hook-form';
 import { ProductFormValues } from '@/lib/validators';
 import { useState } from 'react';
+import { MdDeleteForever } from 'react-icons/md';
 
 interface Props {
 	control: Control<ProductFormValues>;
@@ -33,7 +34,7 @@ export const FeaturesInput = ({ control, errors }: Props) => {
 
 	return (
 		<div className='flex flex-col gap-2'>
-			<label className='text-xs font-bold tracking-tight capitalize text-slate-900'>
+			<label className='text-xs font-bold tracking-tight capitalize text-gray-900 dark:text-gray-100'>
 				Características:
 			</label>
 
@@ -44,8 +45,8 @@ export const FeaturesInput = ({ control, errors }: Props) => {
 						className='flex items-center justify-between gap-2'
 					>
 						<div className='flex items-center gap-2'>
-							<div className='bg-slate-500 h-2 w-2 rounded-full' />
-							<span className='text-sm text-slate-600 font-medium'>
+							<div className='bg-gray-500 dark:bg-gray-600 h-2 w-2 rounded-full' />
+							<span className='text-sm text-gray-900 dark:text-gray-100 font-medium'>
 								{field.value}
 							</span>
 						</div>
@@ -53,9 +54,9 @@ export const FeaturesInput = ({ control, errors }: Props) => {
 						<button
 							type='button'
 							onClick={() => remove(index)}
-							className='text-sm text-red-500 font-bold pr-2 hover:scale-110'
+							className='text-sm text-red-600 dark:text-red-400 font-bold pr-2 hover:scale-110'
 						>
-							X
+							<MdDeleteForever size={20} />
 						</button>
 					</li>
 				))}
@@ -64,7 +65,7 @@ export const FeaturesInput = ({ control, errors }: Props) => {
 			<input
 				type='text'
 				placeholder='256Gb de almacenamiento'
-				className={`border border-gray-300 py-1.5 text-sm rounded-md px-3 font-medium tracking-tighter text-slate-600 outline-none focus:outline-none ${
+				className={`border border-gray-300 dark:border-gray-600 py-1.5 text-sm rounded-md px-3 font-medium tracking-tighter text-gray-900 dark:text-gray-100 outline-none focus:outline-none ${
 					errors.features ? 'border-red-500' : ''
 				}`}
 				autoComplete='off'
@@ -80,4 +81,4 @@ export const FeaturesInput = ({ control, errors }: Props) => {
 			)}
 		</div>
 	);
-};
+};		

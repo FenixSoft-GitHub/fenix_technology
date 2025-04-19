@@ -11,6 +11,8 @@ import {
     IoIosCloseCircleOutline,
 } from 'react-icons/io';
 import { useEffect, useState } from 'react';
+import { MdDeleteForever } from 'react-icons/md';
+import { BiAddToQueue } from 'react-icons/bi';
 
 interface Props {
     control: Control<ProductFormValues>;
@@ -88,13 +90,13 @@ export const VariantsInput = ({
 
 
     return (
-        <div className='flex flex-col gap-3'>
-            <div className='space-y-4 border-b border-slate-200 pb-6'>
+        <div className='flex flex-col gap-3 dark:bg-gray-900 dark:text-gray-100'>
+            <div className='space-y-4 border-b border-slate-200 pb-6 dark:border-gray-600'>
                 <div className='grid grid-cols-5 gap-4 justify-start'>
                     {headersVariants.map((header, index) => (
                         <p
                             key={index}
-                            className='text-xs font-semibold text-slate-800'
+                            className='text-xs font-semibold'
                         >
                             {header}
                         </p>
@@ -109,7 +111,7 @@ export const VariantsInput = ({
                                 {...register(`variants.${index}.stock`, {
                                     valueAsNumber: true,
                                 })}
-                                className='border rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
+                                className='border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
                             />
 
                             <input
@@ -117,37 +119,37 @@ export const VariantsInput = ({
                                 step='0.5'
                                 placeholder='Precio'
                                 {...register(`variants.${index}.price`, {
-                                    valueAsNumber: true,
+                                    valueAsNumber: true
                                 })}
-                                className='border rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
+                                className='border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
                             />
 
                             <input
                                 type='text'
                                 placeholder='64 GB'
                                 {...register(`variants.${index}.storage`)}
-                                className='border rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
+                                className='border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 text-xs font-semibold placeholder:font-normal focus:outline-none appearance-none'
                             />
-
+                            
                             <div className='flex relative'>
                                 {colorActive[index] && (
-                                    <div className='absolute bg-stone-100 rounded-md bottom-8 left-[40px] p-1 w-[100px] h-fit space-y-2'>
+                                    <div className='absolute border border-gray-300 dark:border-gray-600 bg-stone-100 dark:bg-gray-800 dark:text-gray-100 rounded-md bottom-8 left-[40px] p-1 w-[100px] h-fit space-y-2'>
                                         <input
                                             type='color'
                                             {...register(`variants.${index}.color`)}
-                                            className='rounded-md px-3 py-1.5 w-full'
+                                            className='rounded-md px-3 py-1.5 w-full dark:bg-gray-700 dark:text-gray-100'
                                         />
 
                                         <input
                                             type='text'
                                             placeholder='Azul Marino'
                                             {...register(`variants.${index}.colorName`)}
-                                            className='rounded-md px-3 py-1.5 w-full text-xs focus:outline-none font-semibold placeholder:font-normal'
+                                            className='rounded-md dark:bg-gray-700 dark:text-gray-100 px-3 py-1.5 w-full text-xs focus:outline-none font-semibold placeholder:font-normal'
                                         />
                                     </div>
                                 )}
                                 <button
-									className='border w-full h-8 cursor-pointer rounded text-xs font-medium flex items-center justify-center'
+									className='border dark:border-gray-600 w-full h-8 cursor-pointer rounded text-xs font-medium flex items-center justify-center'
 									type='button'
 									onClick={() => toggleColorActive(index)}
 								>
@@ -194,9 +196,9 @@ export const VariantsInput = ({
                                 <button
                                     type='button'
                                     onClick={() => removeVariant(index)}
-                                    className='p-1'
+                                    className='p-1 text-red-500 dark:text-red-400'
                                 >
-                                    <IoIosCloseCircleOutline size={20} />
+                                    <MdDeleteForever size={20} />
                                 </button>
                             </div>
                         </div>
@@ -213,9 +215,9 @@ export const VariantsInput = ({
             <button
                 type='button'
                 onClick={addVariant}
-                className='px-4 py-2 text-slate-800 rounded-md text-sm font-semibold tracking-tight flex items-center gap-1 self-center hover:bg-slate-100'
+                className='px-4 py-2 text-slate-800 dark:text-gray-100 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded-md text-sm font-semibold tracking-tight flex items-center gap-3 self-center hover:bg-slate-100 dark:hover:bg-gray-700'
             >
-                <IoIosAddCircleOutline size={16} />
+                <BiAddToQueue size={20} />
                 Añadir Variante
             </button>
 

@@ -8,10 +8,12 @@ interface Props {
 
 export const Pagination = ({ totalItems, page, setPage }: Props) => {
   const handleNextPage = () => {
+    window.scrollTo(0, 0);
     setPage(page + 1);
   };
 
   const handlePrevPage = () => {
+    window.scrollTo(0, 0);
     setPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
@@ -23,7 +25,7 @@ export const Pagination = ({ totalItems, page, setPage }: Props) => {
   const endItem = Math.min(page * itemsPerPage, totalItems);
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center dark:bg-gray-900 dark:text-gray-100">
       <p className="text-xs font-medium">
         Mostrando{" "}
         <span className="font-bold">
@@ -31,24 +33,23 @@ export const Pagination = ({ totalItems, page, setPage }: Props) => {
         </span>{" "}
         de <span className="font-bold"> {totalItems}</span> productos
       </p>
-
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-6 items-center">
         <button
-          className="w-36 flex items-center justify-between gap-1 px-6 py-2 rounded-full font-medium text-sm mt-2 bg-cyan-600 text-white hover:bg-cyan-700 active:scale-95 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-cyan-600"
+          className="btn-paginacion"
           onClick={handlePrevPage}
           disabled={page === 1}
         >
-          <GrFormPrevious className="text-2xl" />
+          <GrFormPrevious className="text-xl" />
           <span>Anterior</span>
         </button>
 
         <button
-          className="w-36 flex items-center justify-between gap-1 px-6 py-2 rounded-full font-medium text-sm mt-2 bg-cyan-600 text-white hover:bg-cyan-700 active:scale-95 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-cyan-600"
+          className="btn-paginacion"
           onClick={handleNextPage}
           disabled={isLastPage}
         >
           <span>Siguiente</span>
-          <GrFormNext className="text-2xl" />
+          <GrFormNext className="text-xl " />
         </button>
       </div>
     </div>

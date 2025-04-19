@@ -6,10 +6,8 @@ import { useLogin, useUser } from '@/hooks';
 import { Loader } from '@/components/shared/Loader';
 
 const LoginPage = () => {
-	const [email, setEmail] = useState('alfaortiz.sis@gmail.com');
-	const [password, setPassword] = useState('123456');
-	// const [email, setEmail] = useState('bdj04113@dcobe.com');
-	// const [password, setPassword] = useState('Abc123');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 
 	const { mutate, isPending } = useLogin();
 	const { session, isLoading } = useUser();
@@ -25,7 +23,7 @@ const LoginPage = () => {
 	if (session) return <Navigate to='/' />;
 
 	return (
-		<div className='h-full flex flex-col items-center mt-12 gap-5'>
+		<div className='h-full flex flex-col items-center gap-5 py-6 dark:bg-gray-900 dark:text-gray-100'>
 			<h1 className='text-4xl font-bold capitalize'>
 				Iniciar sesión
 			</h1>
@@ -47,7 +45,7 @@ const LoginPage = () => {
 						<input
 							type='email'
 							placeholder='Ingresa tu correo electrónico'
-							className='border border-slate-200 text-black px-5 py-4 placeholder:text-black text-sm rounded-full w-full'
+							className='border border-slate-300 text-gray-900 dark:text-gray-100 px-5 py-4 placeholder:text-black dark:placeholder:text-gray-300 text-sm rounded-full w-full'
 							value={email}
 							onChange={e => setEmail(e.target.value)}
 						/>
@@ -55,7 +53,7 @@ const LoginPage = () => {
 						<input
 							type='password'
 							placeholder='Ingresa tu contraseña'
-							className='border border-slate-200 text-black px-5 py-4 placeholder:text-black text-sm rounded-full w-full'
+							className='border border-slate-300 text-gray-900 dark:text-gray-100 px-5 py-4 placeholder:text-black dark:placeholder:text-gray-300 text-sm rounded-full w-full'
 							value={password}
 							onChange={e => setPassword(e.target.value)}
 						/>
@@ -65,7 +63,7 @@ const LoginPage = () => {
 						</button>
 					</form>
 
-					<p className='text-sm text-stone-800'>
+					<p className='text-sm text-stone-800 dark:text-gray-300'>
 						¿No tienes una cuenta?
 						<Link to='/register' className='underline ml-2'>
 							Regístrate

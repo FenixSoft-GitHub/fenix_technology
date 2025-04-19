@@ -13,7 +13,7 @@ export const SectionFormProduct = ({
 }: Props) => {
 	return (
 		<div
-			className={`bg-white border border-gray-300 shadow-sm rounded-md flex flex-col gap-4 p-7 h-fit ${className}`}
+			className={`bg-white border border-gray-300 dark:border-gray-600 shadow-sm rounded-md flex flex-col gap-4 p-7 h-fit ${className}`}
 		>
 			{titleSection && (
 				<h2 className='font-bold tracking-tight text-xl'>

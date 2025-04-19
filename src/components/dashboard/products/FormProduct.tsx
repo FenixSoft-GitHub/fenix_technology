@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate, useParams } from "react-router";
 import { generateSlug } from "@/helpers";
 import { ProductFormValues, productSchema } from "@/lib/validators";
@@ -11,7 +10,7 @@ import { FeaturesInput } from "./FeaturesInput";
 import { VariantsInput } from "./VariantsInput";
 import { UploaderImages } from "./UploaderImages";
 import { Editor } from "./Editor";
-
+import { MdOutlineCancel, MdOutlineSaveAlt } from "react-icons/md";
 import { useCreateProduct, useProduct, useUpdateProduct } from "@/hooks";
 import { Loader } from "@/components/shared/Loader";
 
@@ -103,23 +102,14 @@ export const FormProduct = ({ titleForm }: Props) => {
 	if (isPending || isUpdatePending || isLoading) return <Loader />;
 
 	return (
-		<div className='flex flex-col gap-6 relative'>
-			<div className='flex justify-between items-center'>
+		<section className='flex flex-col gap-6 relative dark:bg-gray-900 dark:text-gray-100'>
+			<header className='flex justify-between items-center'>
 				<div className='flex items-center gap-3'>
-					<button
-						className='bg-white p-1.5 rounded-md shadow-sm border border-slate-200 transition-all group hover:scale-105'
-						onClick={() => navigate(-1)}
-					>
-						<IoIosArrowBack
-							size={18}
-							className='transition-all group-hover:scale-125'
-						/>
-					</button>
-					<h2 className='font-bold tracking-tight text-2xl capitalize'>
+					<h2 className='text-2xl font-bold text-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)] tracking-tight capitalize'>
 						{titleForm}
 					</h2>
 				</div>
-			</div>
+			</header>
 
 			<form
 				className='grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-max flex-1'
@@ -127,7 +117,7 @@ export const FormProduct = ({ titleForm }: Props) => {
 			>
 				<SectionFormProduct
 					titleSection='Detalles del Producto'
-					className='lg:col-span-2 lg:row-span-2'
+					className='lg:col-span-2 lg:row-span-2 dark:bg-gray-900 dark:text-gray-100'
 				>
 					<InputForm
 						type='text'
@@ -136,12 +126,13 @@ export const FormProduct = ({ titleForm }: Props) => {
 						name='name'
 						register={register}
 						errors={errors}
+						className='dark:bg-gray-900 dark:text-gray-100'
 						required
 					/>
 					<FeaturesInput control={control} errors={errors} />
 				</SectionFormProduct>
 
-				<SectionFormProduct>
+				<SectionFormProduct className='dark:bg-gray-900 dark:text-gray-100'>
 					<InputForm
 						type='text'
 						label='Slug'
@@ -149,6 +140,7 @@ export const FormProduct = ({ titleForm }: Props) => {
 						placeholder='iphone-13-pro-max'
 						register={register}
 						errors={errors}
+						className='dark:bg-gray-900 dark:text-gray-100'
 					/>
 
 					<InputForm
@@ -159,12 +151,13 @@ export const FormProduct = ({ titleForm }: Props) => {
 						register={register}
 						errors={errors}
 						required
+						className='dark:bg-gray-900 dark:text-gray-100'
 					/>
 				</SectionFormProduct>
 
 				<SectionFormProduct
 					titleSection='Variantes del Producto'
-					className='lg:col-span-2 h-fit'
+					className='lg:col-span-2 h-fit dark:bg-gray-900 dark:text-gray-100'
 				>
 					<VariantsInput
 						control={control}
@@ -173,7 +166,7 @@ export const FormProduct = ({ titleForm }: Props) => {
 					/>
 				</SectionFormProduct>
 
-				<SectionFormProduct titleSection='Imágenes del producto'>
+				<SectionFormProduct titleSection='Imágenes del producto' className='dark:bg-gray-900 dark:text-gray-100'>
 					<UploaderImages
 						errors={errors}
 						setValue={setValue}
@@ -183,7 +176,7 @@ export const FormProduct = ({ titleForm }: Props) => {
 
 				<SectionFormProduct
 					titleSection='Descripción del producto'
-					className='col-span-full'
+					className='col-span-full dark:bg-gray-900 dark:text-gray-100'
 				>
 					<Editor
 						setValue={setValue}
@@ -192,19 +185,24 @@ export const FormProduct = ({ titleForm }: Props) => {
 					/>
 				</SectionFormProduct>
 
-				<div className='flex gap-3 absolute top-0 right-0'>
+				<div className='flex gap-5 absolute top-0 right-0'>
 					<button
-						className='btn-secondary-outline'
+						className="btn-primary"
 						type='button'
 						onClick={() => navigate(-1)}
 					>
+						<MdOutlineCancel size={19} />
 						Cancelar
 					</button>
-					<button className='btn-primary' type='submit'>
+					<button
+						type='submit'
+						className="btn-primary"
+					>
+						<MdOutlineSaveAlt size={19} />
 						Guardar Producto
 					</button>
 				</div>
 			</form>
-		</div>
+		</section>
 	);
 };

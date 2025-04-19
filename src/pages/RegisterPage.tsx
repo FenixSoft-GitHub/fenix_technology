@@ -7,19 +7,6 @@ import { LuLoaderCircle } from 'react-icons/lu';
 import { Loader } from '@/components/shared/Loader';
 import { UserRegisterFormValues, userRegisterSchema } from '@/lib/validators';
 
-// export const userRegisterSchema = z.object({
-// 	email: z.string().email('El correo electrónico no es válido'),
-// 	password: z
-// 		.string()
-// 		.min(6, 'La contraseña debe tener al menos 6 caracteres'),
-// 	fullName: z.string().min(1, 'El nombre completo es requerido'),
-// 	phone: z.string().optional(),
-// });
-
-// export type UserRegisterFormValues = z.infer<
-// 	typeof userRegisterSchema
-// >;
-
 const RegisterPage = () => {
 	const {
 		register,
@@ -49,7 +36,7 @@ const RegisterPage = () => {
 	if (session) return <Navigate to='/' />;
 
 	return (
-		<div className='h-full flex flex-col items-center mt-12 gap-5'>
+		<div className='h-full flex flex-col items-center py-6 gap-5 dark:bg-gray-900 dark:text-gray-100'>
 			<h1 className='text-4xl font-bold capitalize'>Regístrate</h1>
 
 			<p className='text-sm font-medium'>
@@ -69,7 +56,7 @@ const RegisterPage = () => {
 						<input
 							type='text'
 							placeholder='Nombre Completo'
-							className='border border-slate-200 text-black px-5 py-4 placeholder:text-black text-sm rounded-full w-full'
+							className='border border-slate-300 text-gray-900 dark:text-gray-100 px-5 py-4 placeholder:text-black dark:placeholder:text-gray-300 text-sm rounded-full w-full'
 							{...register('fullName')}
 						/>
 						{errors.fullName && (
@@ -81,7 +68,7 @@ const RegisterPage = () => {
 						<input
 							type='text'
 							placeholder='Celular'
-							className='border border-slate-200 text-black px-5 py-4 placeholder:text-black text-sm rounded-full w-full'
+							className='border border-slate-300 text-gray-900 dark:text-gray-100 px-5 py-4 placeholder:text-black dark:placeholder:text-gray-300 text-sm rounded-full w-full'
 							{...register('phone')}
 						/>
 						{errors.phone && (
@@ -91,7 +78,7 @@ const RegisterPage = () => {
 						<input
 							type='email'
 							placeholder='Ingresa tu correo electrónico'
-							className='border border-slate-200 text-black px-5 py-4 placeholder:text-black text-sm rounded-full w-full'
+							className='border border-slate-300 text-gray-900 dark:text-gray-100 px-5 py-4 placeholder:text-black dark:placeholder:text-gray-300 text-sm rounded-full w-full'
 							{...register('email')}
 						/>
 						{errors.email && (
@@ -101,7 +88,7 @@ const RegisterPage = () => {
 						<input
 							type='password'
 							placeholder='Ingresa tu contraseña'
-							className='border border-slate-200 text-black px-5 py-4 placeholder:text-black text-sm rounded-full w-full'
+							className='border border-slate-300 text-gray-900 dark:text-gray-100 px-5 py-4 placeholder:text-black dark:placeholder:text-gray-300 text-sm rounded-full w-full'
 							{...register('password')}
 						/>
 						{errors.password && (
@@ -110,14 +97,14 @@ const RegisterPage = () => {
 							</p>
 						)}
 
-						<button className='bg-black text-white uppercase font-semibold tracking-widest text-xs py-4 rounded-full mt-5 w-full'>
+						<button className='bg-black text-white uppercase font-semibold tracking-widest text-xs py-4 rounded-full mt-5 w-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 outline-2 outline-offset-2 outline-gray-600'>
 							Registrarme
 						</button>
 					</form>
 
-					<p className='text-sm text-stone-800'>
+					<p className='text-sm text-stone-800 dark:text-gray-200'>
 						¿Ya tienes una cuenta?
-						<Link to='/registro' className='underline ml-2'>
+						<Link to='/login' className='underline ml-2 dark:text-gray-200'>
 							Inicia sesión
 						</Link>
 					</p>

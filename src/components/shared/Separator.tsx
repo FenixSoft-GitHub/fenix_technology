@@ -3,5 +3,5 @@ interface Props {
 }
 
 export const Separator = ({ className }: Props) => {
-  return <div className={`bg-slate-200 h-px my-5 ${className}`} />;
+  return <div className={`bg-slate-400 h-px my-3 dark:bg-gray-700 ${className}`} />;
 };

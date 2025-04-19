@@ -2,7 +2,6 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RootLayout } from "../layouts/RootLayout";
 import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
-import Products from "@/pages/Products";
 import ProductPage from "@/pages/ProductPage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
@@ -11,14 +10,15 @@ import OrdersUserPage from "@/pages/OrdersUserPage";
 import CheckoutPage from "@/pages/CheckoutPage";
 import ThankyouPage from "@/pages/ThankyouPage";
 import OrderUserPage from "@/pages/OrderUserPage";
-import BlogPostDetail from "@/pages/BlogPostDetail";
-import BlogPage from "@/pages/BlogPage";
+import BlogPostDetail from "@/pages/blog/BlogPostDetail";
+import { BlogPage } from "@/pages/blog/BlogPage";
 import DashboardLayout from "@/layouts/DashboardLayout";
 import DashboardProductsPage from "@/pages/dashboard/DashboardProductsPage";
 import DashboardNewProductPage from "@/pages/dashboard/DashboardNewProductPage";
-import { DashboardOrderPage, DashboardOrdersPage, DashboardProductSlugPage } from "@/pages";
-
-
+import { DashboardOrderPage, DashboardOrdersPage, DashboardProductSlugPage, Policies, Soporte, TermsOfUse } from "@/pages";
+import { ContactUsPage } from "@/pages/ContactUsPage";
+import NuestraHistoriaPage from "@/pages/NuestraHistoriaPage";
+import ProductsPage from "@/pages/ProductsPage";
 
 export const router = createBrowserRouter([
   {
@@ -26,11 +26,16 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "/products", element: <Products /> },
+      { path: "/products", element: <ProductsPage /> },
       { path: "/products/:slug", element: <ProductPage /> },
       { path: "/about", element: <AboutPage /> },
+      { path: "/about/nuestra-historia", element: <NuestraHistoriaPage /> },
       { path: "/login", element: <LoginPage /> },
       { path: "/register", element: <RegisterPage /> },
+      { path: "/contact-us", element: <ContactUsPage /> },
+      { path: "/soporte", element: <Soporte /> },
+      { path: "/terms-of-use", element: <TermsOfUse /> },
+      { path: "/policies", element: <Policies /> },
       // Rutas del blog
       {
         path: "/blog",
@@ -39,6 +44,14 @@ export const router = createBrowserRouter([
       {
         path: "/blog/:slug",
         element: <BlogPostDetail />, // Componente para mostrar el detalle de una publicación
+      },
+      {
+        path: '/checkout',
+        element: <CheckoutPage />,
+      },
+      {
+        path: '/checkout/:id/thank-you',
+        element: <ThankyouPage />,
       },
       {
         path: 'account',
@@ -60,14 +73,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: '/checkout',
-    element: <CheckoutPage />,
-  },
-  {
-    path: '/checkout/:id/thank-you',
-    element: <ThankyouPage />,
-  },
+  
   {
     path: '/dashboard',
     element: <DashboardLayout />,

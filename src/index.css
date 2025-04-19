@@ -2,9 +2,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Ajuste para el NavBar fijo */
 body {
-  /* padding-top: 72px; */
+  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   /* Ajusta este valor según la altura de tu NavBar */
   font-family: var(--font-display);
   background-color: #F8F9FA;
@@ -30,34 +32,9 @@ body::-webkit-scrollbar-thumb {
 
 @supports not selector(::-webkit-scrollbar) {
   body {
-      scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
-
-
-/* .container {
-  width: 100%;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-} */
-
-/* @media (min-width: 640px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-} */
 
 @theme {
   --font-display: "Montserrat", "sans-serif";
@@ -217,26 +194,32 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* CLASES PERSONALIZADAS */
-.btn-paginated {
-	@apply border border-slate-700 rounded-md font-semibold text-xs py-1 px-3 hover:bg-slate-700 hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-800 disabled:text-slate-800 disabled:hover:bg-white disabled:hover:text-slate-700;
+.btn-paginacion {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium w-[140px] bg-cyan-600 text-white hover:bg-cyan-700 transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-1 active:scale-[0.98];
 }
 
 .btn-primary {
-	@apply bg-black text-white py-2 px-3 text-sm font-medium rounded-md;
-}
-
-.btn-secondary-outline {
-	@apply border border-slate-400 text-slate-600 py-2 px-3 text-sm font-medium rounded-md;
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg text-white bg-cyan-600 shadow-sm hover:bg-cyan-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-1 transition-all duration-200 active:scale-[0.98];
 }
 
 /* Para Chrome, Safari, Edge y Opera */
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
-	-webkit-appearance: none;
-	margin: 0;
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Para firefox */
-input[type=number]{
-	-moz-appearance: textfield;
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.icon:hover {
+  background: radial-gradient(circle at 33% 100%,
+      #fed373 4%,
+      #f15245 30%,
+      #d92e7f 62%,
+      #9b36b7 85%,
+      #515ecf);
+  transition: 1s ease-in-out;
 }

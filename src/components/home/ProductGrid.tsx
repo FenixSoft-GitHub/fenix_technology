@@ -8,12 +8,12 @@ interface Props {
 
 export const ProductGrid = ({ title, products }: Props) => {
   return (
-    <div className="my-16">
+    <div className="py-8 text-gray-900 dark:text-gray-100 dark:bg-gray-900">
       <h2 className="text-3xl font-semibold text-center mb-8 md:text-4xl lg:text-5xl drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]">
         {title}
       </h2>
 
-      <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
           <CardProduct
             key={product.id}

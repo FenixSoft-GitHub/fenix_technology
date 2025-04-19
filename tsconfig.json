@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "types": ["node"],
+    "types": ["node", "vite/client"],
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],

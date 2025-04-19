@@ -24,11 +24,11 @@ export const InputForm = ({
 	required,
 }: Props) => {
 	return (
-		<div className='flex flex-col gap-2'>
+		<div className={`flex flex-col gap-2 ${className}`}>
 			<div className='flex justify-between items-center'>
 				<label
 					htmlFor={name}
-					className='text-xs font-bold tracking-tight capitalize text-slate-900'
+					className='text-xs font-bold tracking-tight capitalize text-gray-900 dark:text-gray-100'
 				>
 					{label}:
 				</label>
@@ -45,7 +45,7 @@ export const InputForm = ({
 			</div>
 
 			<div
-				className={`border border-gray-300 rounded-md overflow-hidden gap-5 items-center ${
+				className={`border border-gray-300 dark:border-gray-600 rounded-md overflow-hidden gap-5 items-center ${
 					errors[name] ? 'border-red-500' : ''
 				}`}
 			>

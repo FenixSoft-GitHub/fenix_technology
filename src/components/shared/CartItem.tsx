@@ -37,33 +37,33 @@ export const CartItem = ({ item }: Props) => {
 				<img
 					src={item.image}
 					alt={item.name}
-					className='w-20 h-20 object-contain'
+					className='h-20 w-20 object-contain rounded-lg'
 				/>
 			</div>
 
-			<div className='flex-1 space-y-3'>
-				<div className='flex justify-between'>
-					<p className='font-semibold'>{item.name}</p>
-					<p className='text-sm font-medium text-gray-600 mt-1'>
+			<div className='flex-1 space-y-2'>
+				<div className='flex justify-between gap-1.5'>
+					<p className='font-semibold text-sm'>{item.name}</p>
+					<p className='text-sm font-medium text-gray-600 dark:text-gray-200'>
 						{formatPrice(item.price)}
 					</p>
 				</div>
 
 				<div className='flex gap-3'>
-					<p className='text-[13px] text-gray-600'>
+					<p className='text-[13px] text-gray-600 dark:text-gray-300'>
 						{item.storage} / {item.color}
 					</p>
 				</div>
 
 				<div className='flex gap-4'>
-					<div className='flex items-center gap-5 px-2 py-1 border border-slate-200 w-fit rounded-full'>
+					<div className='flex items-center gap-5 px-2 py-1 border border-gray-400 w-fit rounded-full'>
 						<button
 							onClick={decrement}
 							disabled={item.quantity === 1}
 						>
 							<LuMinus size={15} />
 						</button>
-						<span className='text-slate-500 text-sm'>
+						<span className='text-slate-500 dark:text-gray-300 text-sm'>
 							{item.quantity}
 						</span>
 						<button onClick={increment}>

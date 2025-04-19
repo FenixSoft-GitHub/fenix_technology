@@ -6,8 +6,6 @@ export const useRoleUser = (userId: string) => {
 		queryKey: ['role-user'],
 		queryFn: async() => getUserRole(userId),
 		enabled: !!userId,
-		// retry: false,
-		// refetchOnWindowFocus: true,
 	});
 
 	return {

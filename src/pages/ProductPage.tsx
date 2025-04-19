@@ -27,10 +27,6 @@ const ProductPage = () => {
   const [selectedStorage, setSelectedStorage] = useState<string | null>(null);
   const [selectedVariant, setSelectedVariant] = useState<VariantProduct | null>(null);
   const { count, increment, decrement, reset } = useCounterStore()
-  // const count = useCounterStore(state => state.count);
-  // const increment = useCounterStore(state => state.increment);
-  // const decrement = useCounterStore(state => state.decrement);
-  // const reset = useCounterStore(state => state.reset);
   const navigate = useNavigate();
   const addItem = useCartStore(state => state.addItem);
 
@@ -141,7 +137,7 @@ const ProductPage = () => {
 
   return (
     <>
-      <div className="h-fit flex flex-col md:flex-row gap-16 mt-[52px] px-8">
+      <div className="h-fit flex flex-col md:flex-row gap-16 py-6 px-8 dark:bg-gray-900 dark:text-gray-100">
         <GridImages images={product?.images} />
 
         <div className="flex-1 space-y-2">
@@ -160,10 +156,10 @@ const ProductPage = () => {
 
           <Separator />
 
-          <ul className="space-y-2 ml-7 my-10">
+          <ul className="space-y-2 ml-7 my-6">
             {product?.features.map((feature) => (
               <li key={feature} className="text-sm font-medium flex items-center gap-2 tracking-tight">
-                <span className="bg-black w-[5px] h-[5px] rounded-full"></span>
+                <span className="bg-black dark:bg-gray-100 w-[5px] h-[5px] rounded-full"></span>
                 {feature}
               </li>
             ))}
@@ -177,7 +173,7 @@ const ProductPage = () => {
               {availableColors.map((color) => (
                 <button
                   key={color}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center ${selectedColor === color ? 'border border-slate-800' : ''}`}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center ${selectedColor === color ? 'border border-slate-800 dark:border-slate-100' : ''}`}
                   onClick={() => setSelectedColor(color)}
                 >
                   <span className="w-[26px] h-[26px] rounded-full" style={{ backgroundColor: color }}></span>
@@ -194,7 +190,7 @@ const ProductPage = () => {
             <div className="flex gap-3">
               {selectedColor && (
                 <select
-                  className="border border-gray-300 rounded-lg py-1 px-3"
+                  className="border border-gray-300 dark:border-gray-100 dark:bg-gray-800 dark:text-gray-100 rounded-lg py-1 px-3"
                   value={selectedStorage || ''}
                   onChange={(e) => setSelectedStorage(e.target.value)}
                 >
@@ -213,22 +209,20 @@ const ProductPage = () => {
               <p className="text-xs font-medium">
                 Cantidad:
               </p>
-              <div className="flex gap-8 px-5 py-3 border border-slate-200 w-fit rounded-full">
+              <div className="flex gap-8 px-5 py-3 border border-gray-300 dark:border-gray-100 w-fit rounded-full">
                 <button onClick={decrement} disabled={count === 1}>
                   <LuMinus size={15} />
                 </button>
-                <span className="text-sm text-slate-500">{count}</span>
+                <span className="text-sm text-slate-500 dark:text-gray-100">{count}</span>
                 <button onClick={increment}>
                   <LuPlus size={15} />
                 </button>
               </div>
             </div>
-
-
           </div>
           {
             isOutOfStock ? (
-              <button disabled className="bg-[#f3f3f3] w-full uppercase text-gray-900 font-semibold py-4 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-cyan-300">
+              <button disabled className="bg-[#f3f3f3] dark:bg-gray-900 w-full uppercase text-gray-900 dark:text-gray-100 font-semibold py-4 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-cyan-300">
                 Agotado
               </button>
 
@@ -236,11 +230,11 @@ const ProductPage = () => {
               <>
               {/* Estaba aqui */}
 
-                <div className="flex flex-col gap-2">
-                  <button onClick={addToCart} className="bg-cyan-600 uppercase text-white font-semibold py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-cyan-600 hover:bg-cyan-700">
+                <div className="flex flex-col gap-3">
+                  <button onClick={addToCart} className="bg-cyan-600 dark:bg-cyan-900 uppercase text-white font-semibold py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-cyan-600 hover:bg-cyan-700">
                     Añadir al carrito
                   </button>
-                  <button onClick={buyNow} className="bg-black uppercase text-white font-semibold py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-gray-600">
+                  <button onClick={buyNow} className="bg-gray-900 uppercase text-white font-semibold py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-gray-600">
                     Comprar ahora
                   </button>
                 </div>
@@ -255,8 +249,8 @@ const ProductPage = () => {
                 Envío gratis
               </p>
             </div>
-            <Link to="#" className="flex flex-col gap-1 flex-1 items-center justify-center">
-              <BsChatLeftText size={30} />
+            <Link to="/contact-us" className="flex flex-col gap-1 flex-1 items-center justify-center">
+              <BsChatLeftText size={25} />
               <p className="flex flex-col items-center text-xs font-medium">
                 <span>
                   ¿Necesitas ayuda?

@@ -33,14 +33,14 @@ export const MenuBar = ({
 	}
 
 	return (
-		<div className='flex flex-wrap gap-3'>
+		<div className='flex flex-wrap gap-3 dark:bg-gray-900 dark:text-gray-100'>
 			<button
 				onClick={() =>
 					editor.chain().focus().toggleHeading({ level: 1 }).run()
 				}
 				className={buttonClass(
 					editor.isActive('heading', { level: 1 })
-				)}
+				) + ' dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 dark:border'}
 				type='button'
 			>
 				H1
@@ -52,7 +52,7 @@ export const MenuBar = ({
 				}
 				className={buttonClass(
 					editor.isActive('heading', { level: 2 })
-				)}
+				) + ' dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 dark:border'}
 				type='button'
 			>
 				H2
@@ -64,7 +64,7 @@ export const MenuBar = ({
 				}
 				className={buttonClass(
 					editor.isActive('heading', { level: 3 })
-				)}
+				) + ' dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 dark:border'}
 				type='button'
 			>
 				H3
@@ -72,7 +72,7 @@ export const MenuBar = ({
 
 			<button
 				onClick={() => editor.chain().focus().toggleBold().run()}
-				className={buttonClass(editor.isActive('bold'))}
+				className={buttonClass(editor.isActive('bold')) + ' dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 dark:border'}
 				type='button'
 			>
 				N
@@ -80,7 +80,7 @@ export const MenuBar = ({
 
 			<button
 				onClick={() => editor.chain().focus().toggleItalic().run()}
-				className={buttonClass(editor.isActive('italic'))}
+				className={buttonClass(editor.isActive('italic')) + ' dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 dark:border'}
 				type='button'
 			>
 				K
@@ -88,7 +88,7 @@ export const MenuBar = ({
 
 			<button
 				onClick={() => editor.chain().focus().toggleStrike().run()}
-				className={buttonClass(editor.isActive('strike'))}
+				className={buttonClass(editor.isActive('strike')) + ' dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 dark:border'}
 				type='button'
 			>
 				S
@@ -113,7 +113,7 @@ export const Editor = ({
 		editorProps: {
 			attributes: {
 				class:
-					'focus:outline-none min-h-[150px] prose prose-sm sm:prose-base',
+					'focus:outline-none min-h-[150px] prose prose-sm sm:prose-base dark:prose-invert',
 			},
 		},
 	});
@@ -125,7 +125,7 @@ export const Editor = ({
 	}, [initialContent, editor]);
 
 	return (
-		<div className='space-y-3'>
+		<div className='space-y-3 dark:bg-gray-900 dark:text-gray-100'>
 			<MenuBar editor={editor} />
 
 			<EditorContent editor={editor} />

@@ -7,6 +7,7 @@ export * from './products/useHomeProducts'
 export * from './products/useCreateProduct'
 export * from './products/useDeleteProduct'
 export * from './products/useUpdateProduct'
+export * from './products/useProductsBrands'
 
 // AUTH
 

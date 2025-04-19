@@ -5,13 +5,13 @@ import { useEffect } from 'react';
 import { supabase } from '@/supabase/client';
 import { Loader } from '@/components/shared/Loader';
 import { HiOutlineExternalLink } from 'react-icons/hi';
+import { IoLogOutOutline } from 'react-icons/io5';
+import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 
 const ClientLayout = () => {
+	const navigate = useNavigate();
 	const { session, isLoading: isLoadingSession } = useUser();
 	const { data: role, isLoading: isLoadingRole } = useRoleUser(session?.user.id as string);
-
-
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		supabase.auth.onAuthStateChange(async (event, session) => {
@@ -27,34 +27,41 @@ const ClientLayout = () => {
 		await signOut();
 	};
 
+	const buttonClass = 'min-w-[160px] text-center flex items-center justify-center gap-1 text-sm border border-slate-200 dark:border-gray-500 rounded-full bg-slate-100 dark:bg-slate-800 shadow-md shadow-gray-400 hover:bg-slate-200 dark:hover:bg-slate-600 px-6 py-1.5 transition-all duration-200';
+
 	return (
-		<div className='flex flex-col gap-5 w-full h-[calc(100vh - 72px)] mt-[72px]'>
+		<div className='flex flex-col gap-5 w-full py-6'>
 			{/* Menú */}
-			<nav className='flex justify-center gap-10 text-sm font-medium mx-auto'>
+			<nav className='flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-10 text-sm font-medium mx-auto px-4 text-center'>
 				<NavLink
 					to='/account/pedidos'
 					className={({ isActive }) =>
-						`${isActive ? 'underline' : 'hover:underline'} rounded-full hover:bg-slate-200 px-6 py-1.5`
+						`${buttonClass} ${isActive ? 'underline' : 'hover:underline'}`
 					}
 				>
 					Pedidos
+					<LiaFileInvoiceDollarSolid size={20} />
 				</NavLink>
 				{role === 'admin' && (
 					<NavLink
 						to='/dashboard/products'
-						className='flex items-center gap-1 hover:underline'
+						className={buttonClass}
 					>
 						Dashboard
-						<HiOutlineExternalLink size={16} className='inline-block' />
+						<HiOutlineExternalLink size={20} className='inline-block' />
 					</NavLink>
 				)}
 
-				<button className='hover:underline rounded-full hover:bg-slate-200 px-6 py-1.5' onClick={handleLogout}>
+				<button
+					className={buttonClass}
+					onClick={handleLogout}
+				>
 					Cerrar sesión
+					<IoLogOutOutline size={20} className='inline-block' />
 				</button>
 			</nav>
 
-			<main className='container mt-12 flex-1 mx-auto'>
+			<main className='container py-6 flex-1 mx-auto'>
 				<Outlet />
 			</main>
 		</div>

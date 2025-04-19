@@ -2,7 +2,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useOrder, useUser } from '@/hooks';
 import { Loader } from '@/components/shared/Loader';
 import { formatPrice } from '@/helpers';
-import { Logo } from '@/components/shared/Logo';
 import { supabase } from '@/supabase/client';
 import { useEffect } from 'react';
 
@@ -26,21 +25,8 @@ const ThankyouPage = () => {
     if (isLoading || !data || isLoadingSession) return <Loader />;
 
     return (
-        <div className='flex flex-col h-screen'>
-            <header className='text-black flex items-center justify-center flex-col px-10 py-12'>
-                {/* <Link
-					to='/'
-					className='text-4xl font-bold self-center tracking-tighter transition-all md:text-5xl'
-				>
-					<p>
-						Celulares
-						<span className='text-cyan-600'>Baratos</span>
-					</p>
-				</Link> */}
-                <Logo />
-            </header>
-
-            <main className='container flex-1 flex flex-col items-center gap-10'>
+        <main className='flex flex-col dark:bg-gray-900 dark:text-gray-100 max-w-screen-xl mx-auto px-4 py-6 pt-24'>
+            <div className='container flex-1 flex flex-col items-center gap-10'>
                 <div className='flex gap-3 items-center'>
                     <img className='w-10 h-10' src="/img/checked.avif" alt="Imagen de Check" />
                     {/* <CiCircleCheck size={40} /> */}
@@ -51,7 +37,9 @@ const ThankyouPage = () => {
                 </div>
 
                 <div className='border border-slate-200 w-full md:w-[600px] p-5 rounded-md space-y-3'>
-                    <h3 className='font-medium text-center bg-gray-200 p-2 rounded-md shadow-md border border-slate-400'>Tu pedido está confirmado</h3>
+                    <h3 className='font-medium text-center bg-gray-200 p-2 rounded-md shadow-md border border-slate-400 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700'>
+                        Tu pedido está confirmado
+                    </h3>
 
                     <p className='text-sm'>
                         Gracias por realizar tu compra en Fenix Technology. Para
@@ -75,7 +63,9 @@ const ThankyouPage = () => {
                 </div>
 
                 <div className='border border-slate-200 w-full p-5 rounded-md space-y-3 md:w-[600px]'>
-                    <h3 className='font-medium text-center bg-gray-200 p-2 rounded-md shadow-md border border-slate-400'>Detalles del pedido</h3>
+                    <h3 className='font-medium text-center bg-gray-200 p-2 rounded-md shadow-md border border-slate-400 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700'>
+                        Detalles del pedido
+                    </h3>
 
                     <div className='flex flex-col gap-5'>
                         <ul className='space-y-3'>
@@ -97,13 +87,13 @@ const ThankyouPage = () => {
                                             <p className='font-semibold'>
                                                 {item.productName}
                                             </p>
-                                            <p className='text-sm font-medium text-gray-600 mt-1'>
+                                            <p className='text-sm font-medium text-gray-600 dark:text-gray-100 mt-1'>
                                                 {formatPrice(item.price)}
                                             </p>
                                         </div>
 
                                         <div className='flex gap-3'>
-                                            <p className='text-[13px] text-gray-600'>
+                                            <p className='text-[13px] text-gray-600 dark:text-gray-100'>
                                                 {item.storage} / {item.color_name}
                                             </p>
                                         </div>
@@ -162,14 +152,14 @@ const ThankyouPage = () => {
 
                     <Link
                         to='/products'
-                        className='text-white bg-black py-3 text-sm px-6 tracking-tight font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-gray-600'
+                        className='text-gray-100 bg-gray-900 py-3 text-sm px-6 tracking-tight font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 mt-4 outline-2 outline-offset-2 outline-gray-600'
                     >
                         Seguir comprando
                     </Link>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     );
 };
 
-export default ThankyouPage
+export default ThankyouPage;

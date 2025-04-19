@@ -26,7 +26,7 @@ export const InputAddress = ({
 			>
 				<input
 					type='text'
-					className='w-full px-3 py-1 text-sm focus:outline-none'
+					className={`w-full px-3 py-1 text-sm focus:outline-none ${className}`}
 					placeholder={placeholder}
 					{...register(name)}
 				/>

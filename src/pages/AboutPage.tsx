@@ -1,13 +1,14 @@
 import BentoItem from "@/components/shared/BentoItem";
 import Numeros from "@/components/shared/Numeros";
 import React from "react";
+import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const AboutPage: React.FC = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <div className="relative bg-gray-900 text-white w-full h-screen">
+      <div className="relative bg-gray-900 text-gray-100 w-full h-screen">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat h-full bg-[url('/nosotros/About.avif')]"
           style={{ maskImage: "linear-gradient(black 60%, transparent)" }}
@@ -15,13 +16,13 @@ const AboutPage: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-20" />
 
         <div className="relative flex flex-col items-center justify-center py-20 px-4 text-center lg:py-40 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-gray-100 mb-6">
             Nuestra Razón de Ser
           </h2>
           <p
             className="max-w-[800px] mx-auto text-balance text-center text-sm tracking-wide md:text-xl"
           >
-            Nuestro propósito es revolucionar la forma en que se envían las remesas. A través de la tecnología y la innovación, buscamos hacer que el envío de dinero sea más fácil, rápido y accesible para todos, permitiendo a nuestros clientes mantener un vínculo estrecho con sus seres queridos en el extranjero. Queremos que nuestros clientes tengan la libertad de enviar dinero cuando y donde quieran, sin importar la distancia. Creemos en el poder de las conexiones humanas y trabajamos incansablemente para fortalecerlas.
+            Creemos firmemente que la tecnología adecuada puede transformar la forma en que vives, trabajas y te conectas. Nos dedicamos a seleccionar cuidadosamente equipos y soluciones innovadoras que no solo satisfacen tus necesidades, sino que también te empoderan para alcanzar tus metas y explorar nuevas posibilidades. Somos más que una tienda; somos tu aliado tecnológico en el camino hacia un futuro más inteligente y conectado.
           </p>
         </div>
       </div>
@@ -31,7 +32,7 @@ const AboutPage: React.FC = () => {
       >
         <div id="theater-text" className="md:w-1/2 space-y-4">
           <h1
-            className="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide text-gray-900 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+            className="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide text-gray-900 dark:text-gray-100 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
           >
             Nuestra Misión
           </h1>
@@ -70,7 +71,7 @@ const AboutPage: React.FC = () => {
         </div>
         <div id="trophies-text" className="md:w-1/2 space-y-4">
           <h1
-            className="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide text-gray-900 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+            className="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide text-gray-900 dark:text-gray-100 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
           >
             Nuestra Visión
           </h1>
@@ -85,20 +86,20 @@ const AboutPage: React.FC = () => {
       >
         <div id="theater-text" className="md:w-1/2 space-y-4">
           <h1
-            className="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide text-gray-900 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+            className="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide text-gray-900 dark:text-gray-100 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
           >
             Nuestra Historia
           </h1>
           <p>
             Bienvenidos a la historia de Fenix Technology, un viaje impulsado por una profunda pasión por la tecnología y un compromiso inquebrantable con llevar las últimas innovaciones directamente a tus manos. Desde nuestros humildes comienzos en el 2010, hemos crecido hasta convertirnos en tu destino de confianza para descubrir y adquirir lo mejor del mundo tecnológico.
           </p>
-          <Link 
-            // to={`/blog/${post.slug}`} 
-            to={'/about'}
-            className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-white bg-cyan-600 rounded-md hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
-        >
-          Leer más
-        </Link>
+          <Link
+            to={'/about/nuestra-historia'}
+            className="btn-primary"
+          >
+            Leer más
+            <FaArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
         <div id="theater" className="mt-6 md:mt-0 md:w-1/2">
           <img
@@ -118,7 +119,7 @@ const AboutPage: React.FC = () => {
         className="text-xl text-left px-6 lg:px-20 lg:max-w-[70ch] text-pretty mx-auto my-4 mt-10"
       >
         <h1
-          className="text-3xl lg:text-5xl font-semibold text-center text-wrap mx-auto mb-5 tracking-wide text-gray-900 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
+          className="text-3xl lg:text-5xl font-semibold text-center text-wrap mx-auto mb-5 tracking-wide text-gray-900 dark:text-gray-100 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]"
         >
           Nuestros Valores
         </h1>
