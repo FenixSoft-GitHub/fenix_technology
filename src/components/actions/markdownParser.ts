@@ -11,6 +11,8 @@ export interface BlogPostMetadata {
   tags?: string[];
   featuredImage?: string;
   excerpt?: string;
+  classCol: string;
+  classMax: string;
 }
 
 export interface ParsedBlogPost {

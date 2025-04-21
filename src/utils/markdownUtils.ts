@@ -10,6 +10,8 @@ interface ParsedBlogPost {
     tags?: string[];
     imageUrl?: string;
     excerpt?: string;
+    classCol: string;
+    classMax: string;
   };
   html: string;
 }

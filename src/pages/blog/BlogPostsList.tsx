@@ -10,6 +10,8 @@ interface ParsedBlogPost {
     tags?: string[];
     imageUrl?: string;
     excerpt?: string;
+    classCol: string;
+    classMax: string;
   };
   html: string;
 }
@@ -24,8 +26,7 @@ const BlogPostsList = ({ posts }: { posts: ParsedBlogPost[] }) => {
   }
 
   return (
-    <div className="container mx-auto mb-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="w-full max-w-[1400px] grid lg:grid-cols-10 auto-rows-[30rem] gap-6 mx-auto">
         {posts.map(post => (
           <BlogPostCard
             key={post.metadata.slug}
@@ -37,11 +38,12 @@ const BlogPostsList = ({ posts }: { posts: ParsedBlogPost[] }) => {
               tags: post.metadata.tags,
               excerpt: post.metadata.excerpt,
               imageUrl: post.metadata.imageUrl,
+              classCol: post.metadata.classCol,
+              classMax: post.metadata.classMax
             }}
           />
         ))}
-      </div>
-    </div>
+    </section>
   );
 };
 

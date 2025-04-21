@@ -6,6 +6,8 @@ slug: "vanguardia-tecnologica"
 tags: ["vanguardia", "innovación", "futuro"]
 imageUrl: "/img/blog/Vanguardia.avif"
 excerpt: "La tecnología avanza a un ritmo vertiginoso, transformando la manera en que vivimos, trabajamos y nos relacionamos. En este artículo, exploraremos algunas de las tendencias más impactantes que están definiendo el panorama actual y que prometen revolucionar aún más nuestro futuro."
+classCol: "lg:col-span-6"
+classMax: "max-w-2xl"
 ---
 
 

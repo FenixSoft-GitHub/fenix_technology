@@ -30,7 +30,7 @@ const ClientLayout = () => {
 	const buttonClass = 'min-w-[160px] text-center flex items-center justify-center gap-1 text-sm border border-slate-200 dark:border-gray-500 rounded-full bg-slate-100 dark:bg-slate-800 shadow-md shadow-gray-400 hover:bg-slate-200 dark:hover:bg-slate-600 px-6 py-1.5 transition-all duration-200';
 
 	return (
-		<div className='flex flex-col gap-5 w-full py-6'>
+		<div className='flex flex-col gap-5 w-full py-6 mt-14'>
 			{/* Menú */}
 			<nav className='flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-10 text-sm font-medium mx-auto px-4 text-center'>
 				<NavLink

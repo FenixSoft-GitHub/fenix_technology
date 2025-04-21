@@ -6,6 +6,8 @@ slug: "mejor-laptop-2025"
 tags: ["tecnología", "recomendaciones", "estudiantes"]
 imageUrl: "/img/blog/Laptop.avif"
 excerpt: "¿Buscas la laptop perfecta para tus estudios? Analizamos los modelos más recomendados por rendimiento, portabilidad y precio."
+classCol: "lg:col-span-4"
+classMax: "max-w-xl"
 ---
 
 # La Mejor Laptop para Estudiantes en 2025: Guía Completa

@@ -45,7 +45,7 @@ export const socialLinks = [
     href: "https://www.facebook.com",
     icon: <FaFacebookF />,
     className: "flex items-center justify-center p-3 text-xl text-slate-500 bg-gray-800 rounded-full hover:text-gray-200 hover:text-gray-100 hover:transition ease-in-out duration-1000 hover:scale-110 hover:bg-[#3b5998]",
-    className2: "flex items-center justify-center p-3 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:text-gray-100 hover:transition ease-in-out duration-1000 hover:scale-110 hover:bg-[#3b5998]"
+    className2: "flex items-center justify-center p-4 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:text-gray-100 hover:transition ease-in-out duration-1000 hover:scale-110 hover:bg-[#3b5998]"
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ export const socialLinks = [
     href: "https://www.twitter.com",
     icon: <FaXTwitter />,
     className: "flex items-center justify-center p-3 text-xl text-slate-500 bg-gray-800 rounded-full hover:text-gray-200 hover:scale-110 hover:transition ease-in-out duration-1000 hover:bg-[#00acee]",
-    className2: "flex items-center justify-center p-3 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:scale-110 hover:transition ease-in-out duration-1000 hover:bg-[#00acee]"
+    className2: "flex items-center justify-center p-4 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:scale-110 hover:transition ease-in-out duration-1000 hover:bg-[#00acee]"
   },
   {
     id: 3,
@@ -61,7 +61,7 @@ export const socialLinks = [
     href: "https://www.instagram.com",
     icon: <FaInstagram />,
     className: "icon flex items-center justify-center p-3 text-xl text-slate-500 bg-gray-800 rounded-full hover:text-gray-200 hover:scale-110",
-    className2: "icon flex items-center justify-center p-3 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:scale-110"
+    className2: "icon flex items-center justify-center p-4 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:scale-110"
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ export const socialLinks = [
     href: "https://www.tiktok.com",
     icon: <FaTiktok />,
     className: "flex items-center justify-center p-3 text-xl text-slate-500 bg-gray-800 rounded-full hover:text-gray-200 hover:scale-110 hover:transition ease-in-out duration-1000 hover:bg-[#00f2ea]",
-    className2: "flex items-center justify-center p-3 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:scale-110 hover:transition ease-in-out duration-1000 hover:bg-[#00f2ea]"
+    className2: "flex items-center justify-center p-4 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:scale-110 hover:transition ease-in-out duration-1000 hover:bg-[#00f2ea]"
   },
   {
     id: 5,
@@ -77,7 +77,7 @@ export const socialLinks = [
     href: "https://www.youtube.com",
     icon: <FaYoutube />,
     className: "flex items-center justify-center p-3 text-xl text-slate-500 bg-gray-800 rounded-full hover:text-gray-200 hover:transition ease-in-out duration-1000 hover:scale-110 hover:bg-[#c4302b]",
-    className2: "flex items-center justify-center p-3 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:transition ease-in-out duration-1000 hover:scale-110 hover:bg-[#c4302b]"
+    className2: "flex items-center justify-center p-4 text-5xl text-slate-700 bg-gray-200 rounded-full shadow-gray-700 shadow-md hover:text-gray-200 hover:transition ease-in-out duration-1000 hover:scale-110 hover:bg-[#c4302b]"
   },
 ];
 
@@ -220,4 +220,21 @@ export const bannerImages = [
     title: "Encuentra las mejores marcas y servicio técnico confiable",
     subtitle: "Somos tu aliado tecnológico en productos, instalación y soporte."
   }
+];
+
+export const sponsors = [
+  '/logos/apple-logo.png',
+  '/logos/asus.png',
+  '/logos/hp-logo.png',
+  '/logos/huawei-logo.png',
+  '/logos/intel-power.png',
+  '/logos/samsung.png',
+  '/logos/lenovo-logo.png',
+  '/logos/amd.png',
+  '/logos/dell-logo.png',
+  '/logos/epson.png',
+  '/logos/nvidia.png',
+  '/logos/windows.png',
+  '/logos/xiaomi.png',
+  '/logos/android-logo.png',
 ];

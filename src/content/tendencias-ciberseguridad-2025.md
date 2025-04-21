@@ -6,6 +6,8 @@ slug: "tendencias-ciberseguridad-2025"
 tags: ["ciberseguridad", "seguridad", "tecnología"]
 imageUrl: "/img/blog/Ciberseguridad.avif"
 excerpt: "El panorama de amenazas cibernéticas evoluciona sin cesar. Analizamos las 5 tendencias más importantes en ciberseguridad que marcan 2025 y cómo las organizaciones pueden prepararse."
+classCol: "lg:col-span-10"
+classMax: "max-w-7xl"
 ---
 
 ## Introducción: La Carrera Armamentista Digital Continúa

@@ -6,6 +6,8 @@ slug: "5-gadgets-tech-2025"
 tags: ["gadgets", "tecnología", "novedades"]
 imageUrl: "/img/blog/Gadgets.avif"
 excerpt: "Más allá de los smartphones, el 2025 trae innovaciones fascinantes. Te presentamos 5 gadgets que destacan por su tecnología, diseño y potencial para cambiar nuestro día a día."
+classCol: "lg:col-span-6"
+classMax: "max-w-2xl"
 ---
 
 ## Introducción: Innovación en Nuestras Manos (y Caras)

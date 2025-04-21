@@ -6,6 +6,8 @@ author: "Soporte Técnico"
 tags: ["rendimiento", "optimización", "PC"]
 excerpt: "¿Tu computadora está lenta? Prueba estos cinco trucos fáciles para mejorar su velocidad y rendimiento."
 imageUrl: "/img/blog/AIPC.avif"
+classCol: "lg:col-span-6"
+classMax: "max-w-2xl"
 ---
 
 ## Introducción: Recupera la Velocidad Perdida

@@ -6,6 +6,8 @@ author: "Departamento de Redes"
 tags: ["redes", "LAN", "empresas"]
 excerpt: "Una guía paso a paso para principiantes sobre cómo conectar tus dispositivos y compartir recursos creando una Red de Área Local (LAN) simple y funcional."
 imageUrl: "/img/blog/Looking.avif"
+classCol: "lg:col-span-4"
+classMax: "max-w-xl"
 ---
 
 ## Introducción: ¿Qué es una LAN y Por Qué Necesitas Una?

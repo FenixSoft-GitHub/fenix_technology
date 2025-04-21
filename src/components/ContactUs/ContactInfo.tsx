@@ -10,8 +10,8 @@ const ContactInfo: React.FC = () => {
 
       <div className="space-y-6">
         {contactItems.map((item, index) => (
-          <div key={index} className="flex items-center space-x-4 hover:bg-gray-100 dark:hover:bg-gray-700  p-3 rounded-lg transition-all">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-cyan-700 dark:text-gray-100 rounded-full hover:scale-125 transition-all ease-in-out duration-300">
+          <div key={index} className="flex items-center space-x-4 hover:bg-gray-100 dark:hover:bg-gray-700 p-3 rounded-lg transition-all">
+            <div className="flex items-center justify-center p-3 bg-blue-100 dark:bg-cyan-700 dark:text-gray-100 rounded-full hover:scale-125 transition-all ease-in-out duration-300">
               {item.icon}
             </div>
             <div>

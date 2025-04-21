@@ -6,6 +6,8 @@ slug: "tecnologia-verde-2025"
 tags: ["tecnología sostenible", "ecología", "innovación"]
 imageUrl: "/img/blog/TecnologiaVerde.avif"
 excerpt: "La lucha contra el cambio climático impulsa una ola de innovación. Exploramos las tecnologías verdes más prometedoras de 2025, desde el almacenamiento de energía hasta la agricultura de precisión."
+classCol: "lg:col-span-6"
+classMax: "max-w-2xl"
 ---
 
 ## Introducción: La Tecnología como Aliada del Planeta

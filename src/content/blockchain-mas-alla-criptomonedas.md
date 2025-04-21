@@ -6,6 +6,8 @@ slug: "blockchain-mas-alla-criptomonedas"
 tags: ["blockchain", "tecnología", "innovación"]
 imageUrl: "/img/blog/Bitcoin.avif"
 excerpt: "Aunque nació con Bitcoin, la tecnología blockchain ofrece soluciones de confianza y transparencia para innumerables industrias. Exploramos aplicaciones prácticas que están ganando tracción en 2025."
+classCol: "lg:col-span-4"
+classMax: "max-w-xl"
 ---
 
 ## Introducción: El Potencial Oculto de DLT

@@ -6,6 +6,8 @@ slug: "inteligencia-artificial-en-negocios"
 tags: ["inteligencia artificial", "automatización", "empresas"]
 imageUrl: "/img/blog/InversionIA.avif"
 excerpt: "La IA ya no es una promesa futura, es una herramienta estratégica clave. Exploramos cómo las empresas líderes están aplicando la IA para obtener ventajas competitivas reales en 2025."
+classCol: "lg:col-span-4"
+classMax: "max-w-xl"
 ---
 
 ## Introducción: La IA como Motor de Transformación

@@ -134,7 +134,7 @@ const AboutPage: React.FC = () => {
         <BentoItem
           title="Confianza"
           description="La confianza es el pilar fundamental de cada relación que construimos en Fenix Technology. Sabemos que al elegirnos para sus necesidades tecnológicas en línea, nuestros clientes depositan su fe en nuestra promesa de calidad, servicio y seguridad. Nos comprometemos a honrar esa confianza en cada interacción"
-          url="/nosotros/Confianza.avif"
+          url="/nosotros/Confianza.avif" 
           classCol="lg:col-span-6"
           classMax="max-w-2xl"
         />

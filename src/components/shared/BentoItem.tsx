@@ -6,7 +6,7 @@ interface Props {
   url: string;
   classCol: string;
   classMax: string;
-}
+} 
 
 const BentoItem = ({ title, description, description2, url, classCol, classMax }: Props) => {
   return (
@@ -22,6 +22,6 @@ const BentoItem = ({ title, description, description2, url, classCol, classMax }
       </div>
     </div>
   )
-}
+} 
 
 export default BentoItem

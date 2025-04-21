@@ -30,7 +30,7 @@ export const RootLayout = () => {
         </>
       )}
 
-      <main className="flex-1 mt-20">
+      <main className="flex-1 mt-24">
         <ScrollToTop />
         <Outlet />
       </main>

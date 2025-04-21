@@ -5,7 +5,7 @@ import { ParsedBlogPost } from '@/components/actions/markdownParser';
 import { GrPowerReset } from 'react-icons/gr';
 
 export const BlogPage = () => {
-  const [searchTerm, ] = useState('');
+  const [searchTerm,] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [posts, setPosts] = useState<ParsedBlogPost[]>([]);
 
@@ -34,40 +34,39 @@ export const BlogPage = () => {
   const uniqueTags = Array.from(new Set(posts.flatMap(post => post.metadata.tags || [])));
 
   return (
-    <div className="container mx-auto dark:bg-gray-900 dark:text-gray-100 py-6">
-      <div>
-        <div className="flex gap-4 items-center justify-between">
-          <h1 className="mb-1 text-3xl font-bold text-center drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">
-            Blog
-          </h1>
-          <div className="flex items-center gap-2 w-full md:w-auto">
-            <label htmlFor="tags-filter" className="text-sm font-medium ">
-              Filtrar por Tags:
-            </label>
-            <select
-              id='tags-filter'
-              value={selectedTag || ''}
-              onChange={(e) => setSelectedTag(e.target.value || null)}
-              className="px-4 py-2 border border-gray-400 shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 capitalize dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700"
+    <div className="container mx-auto px-4 py-6 dark:bg-gray-900 dark:text-gray-100">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
+        <h1 className="text-3xl font-bold drop-shadow-[0_2px_2px_rgba(0,0,0,0.4)]">
+          Blog
+        </h1>
+
+        <div className="flex items-center gap-2 w-full md:w-auto">
+          <label htmlFor="tags-filter" className="text-sm font-medium">
+            Filtrar por Tags:
+          </label>
+
+          <select
+            id="tags-filter"
+            value={selectedTag || ''}
+            onChange={(e) => setSelectedTag(e.target.value || null)}
+            className="px-4 py-2 border border-gray-400 shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 capitalize dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 w-full md:w-56"
+          >
+            <option value="">Todas las categorías</option>
+            {uniqueTags.map(tag => (
+              <option key={tag} value={tag}>
+                {tag}
+              </option>
+            ))}
+          </select>
+
+          {selectedTag && (
+            <button
+              onClick={() => setSelectedTag(null)}
+              className="text-cyan-600 dark:text-cyan-400 hover:scale-110 transition-all duration-300 flex items-center gap-2 cursor-pointer rounded-full bg-gray-200 p-2 dark:bg-gray-700"
             >
-              <option value="">Todas las categorías</option>
-              {uniqueTags.map(tag => (
-                <option key={tag} value={tag}>
-                  {tag}
-                </option>
-              ))}
-            </select>
-            {selectedTag && (
-              <button
-                onClick={() => {
-                  setSelectedTag(null);
-                }}
-                className="text-cyan-600 dark:text-cyan-400 hover:scale-110 transition-all duration-300 flex items-center gap-2 cursor-pointer rounded-full bg-gray-200 p-2 dark:bg-gray-700"
-              >
-                <GrPowerReset className="w-5 h-5" />
-              </button>
-            )}
-          </div>
+              <GrPowerReset className="w-5 h-5" />
+            </button>
+          )}
         </div>
       </div>
       <BlogPostsList posts={filteredPosts} />

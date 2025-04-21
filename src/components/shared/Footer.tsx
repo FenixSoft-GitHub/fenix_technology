@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { socialLinks } from "@/constants/links";
 import { ReactNode } from "react";
 import { PaymentMethods } from "@/constants/links";
+import { Logo } from "./Logo";
 
 interface SocialLink {
   id: number;
@@ -18,14 +19,9 @@ export const Footer = () => {
         {/* Sección principal del footer */}
         <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo y descripción */}
-          <div className="space-y-4 text-center md:text-left">
-            <Link
-              to="/"
-              className="text-3xl md:text-4xl font-display2 font-bold text-white inline-block hover:scale-105 transition-transform"
-            >
-              Fenix Technology
-            </Link>
-            <p className="text-sm text-slate-400 mt-2">
+          <div className="space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <Logo />
+            <p className="text-sm text-slate-400">
               Tu destino confiable para encontrar los mejores precios en equipos de tecnología y accesorios.
             </p>
           </div>
@@ -86,7 +82,7 @@ export const Footer = () => {
             <p className="text-sm text-slate-400">
               No te pierdas las novedades que Fenix Technology tiene para ti.
             </p>
-            <div className="grid grid-cols-5 gap-4 mt-4 sm:grid-cols-3 md:grid-cols-5">
+            <div className="grid grid-cols-5 gap-4 mt-6 justify-items-center">
               {socialLinks.map((link: SocialLink) => (
                 <a
                   key={link.id}

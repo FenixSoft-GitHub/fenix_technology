@@ -4,6 +4,7 @@ import { ProductGrid } from "@/components/home/ProductGrid"
 import { ProductGridSkeleton } from "@/components/skeletons/ProductGridSkeleton";
 import { useHomeProducts } from "@/hooks";
 import { prepareProducts } from "@/helpers";
+import SponsorCarousel from "@/components/home/SponsorCarousel";
 
 const HomePage = () => {
   const { recentProducts, popularProducts, isLoading } = useHomeProducts();
@@ -36,8 +37,8 @@ const HomePage = () => {
 
         <FeatureGrid />
 
-        <Brands />
-
+        {/* <Brands /> */}
+        <SponsorCarousel />
       </div>
     </main>
   )
