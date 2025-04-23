@@ -1,7 +1,6 @@
 import { supabase } from "@/supabase/client";
 import { ProductInput } from "@/components/interfaces";
 import { extractFilePath } from "@/helpers";
-import { log } from "console";
 
 //Desde aqui la prueba
 export const getProductsAll = async () => {
