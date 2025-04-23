@@ -38,6 +38,9 @@ dependencies:
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
+  keen-slider:
+    specifier: ^6.8.6
+    version: 6.8.6
   markdown-it:
     specifier: ^14.1.0
     version: 14.1.0
@@ -3148,6 +3151,10 @@ packages:
     hasBin: true
     dependencies:
       commander: 8.3.0
+    dev: false
+
+  /keen-slider@6.8.6:
+    resolution: {integrity: sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==}
     dev: false
 
   /keyv@4.5.4:

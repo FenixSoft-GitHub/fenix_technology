@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Loader } from '@/components/shared/Loader';
 import { importMarkdownFiles } from '@/utils/markdownUtils';
+import { IoReturnUpBack } from 'react-icons/io5';
 
 interface BlogPost {
   title: string;
@@ -81,9 +82,9 @@ const BlogPostDetail = () => {
       <div className="max-w-4xl mx-auto">
         {post.imageUrl && (
           <div className="relative h-96 mb-8">
-            <img 
-              src={post.imageUrl} 
-              alt={post.title} 
+            <img
+              src={post.imageUrl}
+              alt={post.title}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
@@ -99,15 +100,26 @@ const BlogPostDetail = () => {
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
         {post.tags && post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map(tag => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-100 shadow-md capitalize"
+          <div className="flex justify-between items-center">
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-100 shadow-md capitalize"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 group">
+              <Link
+                to={'/blog'}
+                className="inline-flex items-center gap-2 text-base text-cyan-600 dark:text-cyan-400 hover:underline font-medium group"
               >
-                {tag}
-              </span>
-            ))}
+                Regresar
+                <IoReturnUpBack className="w-6 h-6 group-hover:translate-x-1 transition-all" />
+              </Link>
+            </div>
           </div>
         )}
       </div>

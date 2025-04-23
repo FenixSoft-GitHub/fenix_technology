@@ -15,7 +15,7 @@ const getTagColor = (content: TagType) => {
 const Tag = ({ contentTag }: Props) => {
     return (
         <div
-            className={`w-fit px-3 py-1 rounded-full shadow-lg outline-2 outline-offset-2 ${getTagColor(contentTag)}`}
+            className={`w-fit px-3 py-1 rounded-full shadow-lg outline-1 outline-offset-1 ${getTagColor(contentTag)}`}
         >
             <p className="uppercase text-xs font-semibold">{contentTag}</p>
         </div>

@@ -30,7 +30,7 @@ const BrandFilter: React.FC<BrandFilterProps> = ({ brands, onBrandChange, onRese
         id="brand-filter"
         value={selectedBrandLocal || ''}
         onChange={handleBrandChangeLocal}
-        className="w-full md:w-auto px-4 py-2 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-600 capitalize text-gray-900 dark:text-gray-100 dark:bg-gray-900 dark:focus:ring-gray-100 dark:ring-offset-gray-800"
+        className="px-4 py-2 border border-gray-400 shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 capitalize dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 w-full md:w-56"
       >
         <option value="">Todas las marcas</option>
         {brands?.map((brand) => (
@@ -43,7 +43,7 @@ const BrandFilter: React.FC<BrandFilterProps> = ({ brands, onBrandChange, onRese
       {selectedBrandLocal && (
         <button
           onClick={onResetFilter}
-          className="text-cyan-600 hover:scale-110 transition-all duration-300 flex items-center gap-2 cursor-pointer rounded-full bg-gray-200 p-2 dark:bg-gray-700 dark:text-gray-100"
+          className="text-cyan-600 dark:text-cyan-400 hover:scale-110 transition-all duration-300 flex items-center gap-2 cursor-pointer rounded-full bg-gray-200 p-2 dark:bg-gray-700"
         >
           <GrPowerReset className="w-5 h-5" />
         </button>

@@ -13,8 +13,8 @@ const Numeros = () => {
       ref={ref}
       className="w-full max-w-[1300px] mx-auto p-6 md:p-8 lg:p-10 bg-gray-200/50 dark:bg-gray-800/50 rounded-lg mt-4 shadow-md mb-8"
     >
-      <h2 className="text-3xl lg:text-5xl text-center text-balance mb-10 lg:mb-20 font-semibold font-lexend text-gray-900 dark:text-gray-100 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]">
-        Fenix Technology en números
+      <h2 className="text-3xl lg:text-5xl text-center text-balance mb-10 lg:mb-20 font-semibold font-lexend text-gray-900  font-display3 dark:text-gray-100 drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]">
+        <span>Fenix</span><span className="text-cyan-500 dark:text-cyan-400"> Technology</span> en números
       </h2>
       <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-3">
         {/* Transacciones Realizadas */}

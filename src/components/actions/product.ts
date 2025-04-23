@@ -1,6 +1,7 @@
 import { supabase } from "@/supabase/client";
 import { ProductInput } from "@/components/interfaces";
 import { extractFilePath } from "@/helpers";
+import { log } from "console";
 
 //Desde aqui la prueba
 export const getProductsAll = async () => {
@@ -115,14 +116,14 @@ export const getRecentProducts = async () => {
       .from("products")
       .select("*, variants(*)")
       .order("created_at", { ascending: false })
-      .limit(4);
+      .limit(10);
 
     if (error) {
       console.log(error.message);
       throw new Error(error.message);
     }
 
-    return products;
+		return products;
   } catch (error) {
     console.error("Error fetching product:", error);
     throw error;
@@ -134,21 +135,26 @@ export const getRandomProducts = async () => {
     const { data: products, error } = await supabase
       .from("products")
       .select("*, variants(*)")
-      .limit(20);
+			.order("created_at", { ascending: false })
+      .limit(24); // obtén más para tener margen
 
-    if (error) {
-      console.log(error.message);
-      throw new Error(error.message);
-    }
+    if (error) throw new Error(error.message);
+    if (!products) return [];
 
-    const randomProducts = products
+    // Filtrar productos válidos
+    const filtered = products.filter(
+      (p) => p?.images?.length > 0 && p?.name && p?.variants?.length > 0
+    );
+		
+    // Mezclar aleatoriamente en el cliente
+    const randomProducts = filtered
       .sort(() => 0.5 - Math.random())
-      .slice(0, 4);
+      .slice(0, 12); // devolver 12 aleatorios
 
     return randomProducts;
   } catch (error) {
-    console.error("Error fetching random product:", error);
-    throw error;
+    console.error("Error fetching random products:", error);
+    return [];
   }
 };
 

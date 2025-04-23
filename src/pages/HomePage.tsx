@@ -17,8 +17,10 @@ const HomePage = () => {
             <ProductGridSkeleton numberOfProducts={4} />
           ) : (
             <ProductGrid
+              key="recent"
               title="Nuevos Productos"
               products={preparedRecentProducts}
+              showNavigation={true}
             />
           )
         }
@@ -28,8 +30,11 @@ const HomePage = () => {
             <ProductGridSkeleton numberOfProducts={4} />
           ) : (
             <ProductGrid
+              key={preparedPopularProducts.map(p => p.id).join("-")}
               title="Productos Destacados"
               products={preparedPopularProducts}
+              showNavigation={true}
+
             />
           )
         }
